@@ -29,4 +29,3 @@ def retrieve_repositories(configuration: Configuration) -> PaginatedList[Reposit
         repositories=[repository.full_name for repository in repositories],
     )
     return repositories
-
