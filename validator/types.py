@@ -3,7 +3,7 @@ from typing import TypedDict
 
 @dataclass
 class Repository:
-    """A representation of a repository."""
+    """A representation of a GitHub repository."""
 
     name: str
     full_name: str
@@ -14,4 +14,4 @@ class Repository:
 class AnalysedRepositories(TypedDict):
     """A representation of a repository with the required settings."""
     owner: str
-    repositories: list[dict] # Dict of Repository type
+    repositories: list[dict] # List of dictionaries representing Repository
