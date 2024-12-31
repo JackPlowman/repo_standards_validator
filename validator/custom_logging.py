@@ -7,7 +7,7 @@ logger: stdlib.BoundLogger = get_logger()
 
 
 def set_up_custom_logging() -> None:
-    """Set up custom logging for the application."""
+    """Setup custom logging for the application."""
     level = INFO
     if getenv("INPUT_DEBUG", "false").lower() == "true":
         level = DEBUG
