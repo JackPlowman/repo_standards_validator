@@ -17,7 +17,7 @@ def main() -> None:
     set_up_custom_logging()
     configuration = Configuration()
     repositories = retrieve_repositories(configuration)
-    raw_analysed_repositories = [] 
+    raw_analysed_repositories = []
     for repository in repositories:
         analysed_repository = check_repository(repository)
         raw_analysed_repositories.append(asdict(analysed_repository))
