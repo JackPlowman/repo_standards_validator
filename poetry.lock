@@ -371,6 +371,33 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "ruff"
+version = "0.8.4"
+description = "An extremely fast Python linter and code formatter, written in Rust."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "ruff-0.8.4-py3-none-linux_armv6l.whl", hash = "sha256:58072f0c06080276804c6a4e21a9045a706584a958e644353603d36ca1eb8a60"},
+    {file = "ruff-0.8.4-py3-none-macosx_10_12_x86_64.whl", hash = "sha256:ffb60904651c00a1e0b8df594591770018a0f04587f7deeb3838344fe3adabac"},
+    {file = "ruff-0.8.4-py3-none-macosx_11_0_arm64.whl", hash = "sha256:6ddf5d654ac0d44389f6bf05cee4caeefc3132a64b58ea46738111d687352296"},
+    {file = "ruff-0.8.4-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:e248b1f0fa2749edd3350a2a342b67b43a2627434c059a063418e3d375cfe643"},
+    {file = "ruff-0.8.4-py3-none-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:bf197b98ed86e417412ee3b6c893f44c8864f816451441483253d5ff22c0e81e"},
+    {file = "ruff-0.8.4-py3-none-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:c41319b85faa3aadd4d30cb1cffdd9ac6b89704ff79f7664b853785b48eccdf3"},
+    {file = "ruff-0.8.4-py3-none-manylinux_2_17_ppc64.manylinux2014_ppc64.whl", hash = "sha256:9f8402b7c4f96463f135e936d9ab77b65711fcd5d72e5d67597b543bbb43cf3f"},
+    {file = "ruff-0.8.4-py3-none-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:e4e56b3baa9c23d324ead112a4fdf20db9a3f8f29eeabff1355114dd96014604"},
+    {file = "ruff-0.8.4-py3-none-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:736272574e97157f7edbbb43b1d046125fce9e7d8d583d5d65d0c9bf2c15addf"},
+    {file = "ruff-0.8.4-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e5fe710ab6061592521f902fca7ebcb9fabd27bc7c57c764298b1c1f15fff720"},
+    {file = "ruff-0.8.4-py3-none-musllinux_1_2_aarch64.whl", hash = "sha256:13e9ec6d6b55f6da412d59953d65d66e760d583dd3c1c72bf1f26435b5bfdbae"},
+    {file = "ruff-0.8.4-py3-none-musllinux_1_2_armv7l.whl", hash = "sha256:97d9aefef725348ad77d6db98b726cfdb075a40b936c7984088804dfd38268a7"},
+    {file = "ruff-0.8.4-py3-none-musllinux_1_2_i686.whl", hash = "sha256:ab78e33325a6f5374e04c2ab924a3367d69a0da36f8c9cb6b894a62017506111"},
+    {file = "ruff-0.8.4-py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:8ef06f66f4a05c3ddbc9121a8b0cecccd92c5bf3dd43b5472ffe40b8ca10f0f8"},
+    {file = "ruff-0.8.4-py3-none-win32.whl", hash = "sha256:552fb6d861320958ca5e15f28b20a3d071aa83b93caee33a87b471f99a6c0835"},
+    {file = "ruff-0.8.4-py3-none-win_amd64.whl", hash = "sha256:f21a1143776f8656d7f364bd264a9d60f01b7f52243fbe90e7670c0dfe0cf65d"},
+    {file = "ruff-0.8.4-py3-none-win_arm64.whl", hash = "sha256:9183dd615d8df50defa8b1d9a074053891ba39025cf5ae88e8bcb52edcc4bf08"},
+    {file = "ruff-0.8.4.tar.gz", hash = "sha256:0d5f89f254836799af1615798caa5f80b7f935d7a670fad66c5007928e57ace8"},
+]
+
+[[package]]
 name = "structlog"
 version = "24.4.0"
 description = "Structured Logging for Python"
@@ -414,6 +441,17 @@ brotli = ["brotli (>=1.0.9)", "brotlicffi (>=0.8.0)"]
 h2 = ["h2 (>=4,<5)"]
 socks = ["pysocks (>=1.5.6,!=1.5.7,<2.0)"]
 zstd = ["zstandard (>=0.18.0)"]
+
+[[package]]
+name = "vulture"
+version = "2.14"
+description = "Find dead code"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "vulture-2.14-py2.py3-none-any.whl", hash = "sha256:d9a90dba89607489548a49d557f8bac8112bd25d3cbc8aeef23e860811bd5ed9"},
+    {file = "vulture-2.14.tar.gz", hash = "sha256:cb8277902a1138deeab796ec5bef7076a6e0248ca3607a3f3dee0b6d9e9b8415"},
+]
 
 [[package]]
 name = "wrapt"
@@ -489,7 +527,30 @@ files = [
     {file = "wrapt-1.17.0.tar.gz", hash = "sha256:16187aa2317c731170a88ef35e8937ae0f533c402872c1ee5e6d079fcf320801"},
 ]
 
+[[package]]
+name = "zizmor"
+version = "0.10.0"
+description = "Static analysis for GitHub Actions"
+optional = false
+python-versions = "*"
+files = [
+    {file = "zizmor-0.10.0-py3-none-macosx_10_12_x86_64.whl", hash = "sha256:ffdacfddbb4eb4cbb0126e3875eb21a453414be47fe423824fdf1946fff9cc02"},
+    {file = "zizmor-0.10.0-py3-none-macosx_11_0_arm64.whl", hash = "sha256:948eda1c8a33ac28946972f4672fddd09dd9ad793934b6f5d572b74acce1ec15"},
+    {file = "zizmor-0.10.0-py3-none-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:1c64fcd25149107aa6a5435fa2cf909b8fd92af2a7dfb8650aad59a1eb10f35e"},
+    {file = "zizmor-0.10.0-py3-none-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:b88048c5b11af489ff37ff064fdd9a9cad6ea9cc34e8c25a9d2e196819859cf1"},
+    {file = "zizmor-0.10.0-py3-none-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:ecac7a28aef6c7e058e0292da6f04345cfd21d36def7acff0038500544bd48c1"},
+    {file = "zizmor-0.10.0-py3-none-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:85da4c1dd42b031aad3550024c6f9d2525668f04285b4280454c278153383e59"},
+    {file = "zizmor-0.10.0-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:01743f434d8dacd3d4009999e92ddf2952c2138bfc10ab2eb1e2e592f31cb0a2"},
+    {file = "zizmor-0.10.0-py3-none-musllinux_1_2_aarch64.whl", hash = "sha256:4894141e6f0adb4821d377aad91cbcb699c88ae5c816267189926b2d40becdd3"},
+    {file = "zizmor-0.10.0-py3-none-musllinux_1_2_armv7l.whl", hash = "sha256:d74ec6b1547f529756315238805fdfb58b59b09b6b7b85b49d38a68dc96aa706"},
+    {file = "zizmor-0.10.0-py3-none-musllinux_1_2_i686.whl", hash = "sha256:514c5f0e104008884e4e0a2cdd1ad4cc63fc280791f43a8521f3fb96a7f264af"},
+    {file = "zizmor-0.10.0-py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:c9319af1c1806525aa18501488be2f9ba9f03b16ce8cb1c10e98b563e89aacfc"},
+    {file = "zizmor-0.10.0-py3-none-win32.whl", hash = "sha256:20eb70b037116ef29f4b90f298801f3cccb54f0a04e3454ae0ee31e70d554d77"},
+    {file = "zizmor-0.10.0-py3-none-win_amd64.whl", hash = "sha256:7d74d430feb5c0a28fba3a200eac1ae6ce7e7ecbf593f386149f9c41fa02aeea"},
+    {file = "zizmor-0.10.0.tar.gz", hash = "sha256:7bbf8275ac411682200217a60a3f8ce8bf3b545ff9a1ea3c2d26436ad4ca81e1"},
+]
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.13"
-content-hash = "b4af2c8fa50839a9cbf91122cf43d80b00034f6d59bc194ecb4753ceeacfaf2f"
+content-hash = "f56a475d3c0ba406a3d812927c2643cbadfa6218f7fe002a8c7a3130d5e212e0"
