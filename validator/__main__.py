@@ -9,7 +9,7 @@ from .repository_checks import check_repository
 from .types import AnalysedRepositories
 from json import dump
 from dataclasses import asdict
-
+from .action_summary import generate_action_summary
 logger: stdlib.BoundLogger = get_logger()
 
 
@@ -27,6 +27,7 @@ def main() -> None:
     )
     with open("repositories.json", "w") as file:
         dump(analysed_repositories, file, indent=4)
+    generate_action_summary(analysed_repositories)
     logger.info(
         "Repositories analysed",
         repositories=analysed_repositories,
