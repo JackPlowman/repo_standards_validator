@@ -9,6 +9,7 @@ from .repository_checks import check_repository
 from .types import AnalysedRepositories
 from json import dump
 from dataclasses import asdict
+
 logger: stdlib.BoundLogger = get_logger()
 
 
@@ -21,7 +22,9 @@ def main() -> None:
     for repository in repositories:
         analysed_repository = check_repository(repository)
         raw_analysed_repositories.append(asdict(analysed_repository))
-    analysed_repositories=AnalysedRepositories(owner=configuration.repository_owner, repositories=raw_analysed_repositories)
+    analysed_repositories = AnalysedRepositories(
+        owner=configuration.repository_owner, repositories=raw_analysed_repositories
+    )
     with open("repositories.json", "w") as file:
         dump(analysed_repositories, file, indent=4)
     logger.info(

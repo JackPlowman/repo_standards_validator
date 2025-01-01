@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import TypedDict
 
+
 @dataclass
 class Repository:
     """A representation of a GitHub repository."""
@@ -11,7 +12,9 @@ class Repository:
     secret_scanning: bool
     dependabot_security_updates: bool
 
+
 class AnalysedRepositories(TypedDict):
     """A representation of a repository with the required settings."""
+
     owner: str
-    repositories: list[dict] # List of dictionaries representing Repository
+    repositories: list[dict]  # List of dictionaries representing Repository
