@@ -11,6 +11,14 @@ run:
     poetry run python -m validator
 
 # ------------------------------------------------------------------------------
+# Test Commands
+# ------------------------------------------------------------------------------
+
+# Validate the schema of the generated statistics file
+validate-schema:
+    poetry run check-jsonschema --schemafile tests/schema_validation/repositories_schema.json tests/schema_validation/repositories.json
+
+# ------------------------------------------------------------------------------
 # Docker Commands
 # ------------------------------------------------------------------------------
 

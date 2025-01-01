@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "additionalProperties": false,
+  "type": "object",
+  "properties": {
+    "owner": {
+      "type": "string"
+    },
+    "repositories": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "full_name": {
+              "type": "string"
+            },
+            "secret_scanning_push_protection": {
+              "type": "boolean"
+            },
+            "secret_scanning": {
+              "type": "boolean"
+            },
+            "dependabot_security_updates": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "full_name",
+            "secret_scanning_push_protection",
+            "secret_scanning",
+            "dependabot_security_updates"
+          ]
+        }
+      ]
+    }
+  },
+  "required": ["owner", "repositories"]
+}
