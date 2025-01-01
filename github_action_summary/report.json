@@ -1,7 +1,7 @@
 {
   "version": "0.17.0",
-  "uuid": "4ad30da8-9dbd-4fa7-9aa9-f99dc2d04215",
-  "timestamp": "2025-01-01T10:05:08+00:00",
+  "uuid": "26fe1da2-f2bd-43a1-8042-ac1f5b365e33",
+  "timestamp": "2025-01-01T10:06:20+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -12,7 +12,7 @@
     "totals": {
       "Python": {
         "files": 8,
-        "lines_of_code": 83,
+        "lines_of_code": 85,
         "functions": 8,
         "hard_to_maintain": 0,
         "unmaintainable": 0
@@ -23,7 +23,7 @@
         "entries": [
           "validator/"
         ],
-        "profile": [41, 42, 0, 0]
+        "profile": [43, 42, 0, 0]
       },
       "validator/": {
         "entries": [
@@ -36,7 +36,7 @@
           "types.py",
           "__main__.py"
         ],
-        "profile": [41, 42, 0, 0]
+        "profile": [43, 42, 0, 0]
       }
     },
     "files": {
@@ -61,12 +61,12 @@
         ]
       },
       "validator/action_summary.py": {
-        "checksum": "177bbf95c300f2a9b7decb937f55c000",
+        "checksum": "04aab842e61513be157423ee8a3b4e9b",
         "language": "Python",
-        "loc": 8,
-        "profile": [8, 0, 0, 0],
+        "loc": 10,
+        "profile": [10, 0, 0, 0],
         "measurements": [
-          {"unit_name": "generate_action_summary", "start": {"line": 10, "column": 1}, "end": {"line": 22, "column": 90}, "value": 8}
+          {"unit_name": "generate_action_summary", "start": {"line": 10, "column": 1}, "end": {"line": 24, "column": 10}, "value": 10}
         ]
       },
       "validator/repositories.py": {
@@ -104,12 +104,12 @@
         ]
       },
       "validator/__main__.py": {
-        "checksum": "cd25b9d6eb39417512cedd77c6d04826",
+        "checksum": "d44a920f37116388882faaa0e5d67b6b",
         "language": "Python",
         "loc": 19,
         "profile": [0, 19, 0, 0],
         "measurements": [
-          {"unit_name": "main", "start": {"line": 16, "column": 1}, "end": {"line": 34, "column": 6}, "value": 19}
+          {"unit_name": "main", "start": {"line": 17, "column": 1}, "end": {"line": 35, "column": 6}, "value": 19}
         ]
       }
     }
