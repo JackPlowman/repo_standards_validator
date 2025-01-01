@@ -14,6 +14,14 @@ run:
 # Test Commands
 # ------------------------------------------------------------------------------
 
+# Run unit tests
+unit-test:
+    poetry run pytest validator --cov=. --cov-report=xml
+
+# Run unit tests with debug output
+unit-test-debug:
+    poetry run pytest validator --cov=. --cov-report=xml -vvvv
+
 # Validate the schema of the generated statistics file
 validate-schema:
     poetry run check-jsonschema --schemafile tests/schema_validation/repositories_schema.json tests/schema_validation/repositories.json
