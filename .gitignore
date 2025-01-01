@@ -172,3 +172,4 @@ cython_debug/
 
 # Custom
 repositories.json
+tests/schema_validation/repositories.json

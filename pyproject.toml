@@ -11,6 +11,7 @@ pygithub = "2.5.0"
 ruff = "0.8.4"
 vulture = "2.14"
 zizmor = "0.10.0"
+check-jsonschema = "0.30.0"
 
 [build-system]
 requires = ["poetry-core"]
