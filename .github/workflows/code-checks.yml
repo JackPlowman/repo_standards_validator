@@ -211,7 +211,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v4.1.8
         with:
-          name: repository_statistics
+          name: repositories
           path: tests/schema_validation
       - name: Validate Schema
         run: just validate-schema
