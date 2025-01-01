@@ -5,7 +5,7 @@ author: "Jack Plowman"
 branding:
   color: black
   icon: code
-  
+
 runs:
   using: "docker"
   image: "../../../Dockerfile"

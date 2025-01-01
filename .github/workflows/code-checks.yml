@@ -166,7 +166,6 @@ jobs:
       - name: Check Python Code for Dead Code (Vulture)
         run: just vulture
 
-
   run-local-action:
     name: Run Local Action
     runs-on: ubuntu-latest
