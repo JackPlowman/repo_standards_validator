@@ -2,10 +2,6 @@ name: "Repo Standards Validator"
 description: "Validates all my repositories comply with my standards"
 author: "Jack Plowman"
 
-branding:
-  color: black
-  icon: code
-
 runs:
   using: "docker"
   image: docker://ghcr.io/jackplowman/repo_standards_validator:v1.0.0
