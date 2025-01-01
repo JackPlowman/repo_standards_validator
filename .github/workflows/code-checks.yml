@@ -77,3 +77,17 @@ jobs:
           queries: security-and-quality
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3.28.0
+
+  check-justfile-format:
+    name: Check Justfile Format
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Just
+        uses: extractions/setup-just@v2
+      - name: Check Justfile Format
+        run: just format-check
