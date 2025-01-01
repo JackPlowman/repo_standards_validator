@@ -1,0 +1,22 @@
+name: "Repo Standards Validator"
+description: "Validates all my repositories comply with my standards"
+author: "Jack Plowman"
+
+branding:
+  color: black
+  icon: code
+  
+runs:
+  using: "docker"
+  image: "../../../Dockerfile"
+  env:
+    GITHUB_ACTION: "true"
+
+inputs:
+  GITHUB_TOKEN:
+    description: "The GitHub token"
+    required: false
+    default: ${{ github.token }}
+  REPOSITORY_OWNER:
+    description: "The GitHub repository owner"
+    required: true

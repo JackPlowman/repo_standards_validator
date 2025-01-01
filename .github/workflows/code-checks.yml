@@ -165,3 +165,34 @@ jobs:
           RUFF_OUTPUT_FORMAT: "github"
       - name: Check Python Code for Dead Code (Vulture)
         run: just vulture
+
+
+  run-local-action:
+    name: Run Local Action
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Setup Dependencies
+        uses: ./.github/actions/setup-dependencies
+      - name: Run Repo Standards Validator
+        uses: ./.github/actions/local
+        with:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          REPOSITORY_OWNER: ${{ github.REPOSITORY_OWNER }}
+      - name: Download GitHub Action Summary
+        uses: austenstone/job-summary@v2.0
+        with:
+          name: GITHUB_ACTION_SUMMARY
+          create-pdf: false
+          create-pdf-artifact: false
+          create-md: true
+          create-md-artifact: true
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4.4.3
+        with:
+          name: repositories
+          path: repositories.json
