@@ -11,6 +11,22 @@ run:
     poetry run python -m validator
 
 # ------------------------------------------------------------------------------
+# Docker Commands
+# ------------------------------------------------------------------------------
+
+# Build the Docker image
+docker-build:
+    docker build -t jackplowman/repo_standards_validator:latest .
+
+# Run the validator in a Docker container, used for testing the github action docker image
+docker-run:
+    docker run \
+      --env GITHUB_TOKEN=${GITHUB_TOKEN} \
+      --env INPUT_REPOSITORY_OWNER=JackPlowman \
+      --volume "$(pwd)/validator:/validator" \
+      --rm jackplowman/repo_standards_validator:latest
+
+# ------------------------------------------------------------------------------
 # Ruff - Python Linting and Formatting
 # Set up ruff red-knot when it's ready
 # ------------------------------------------------------------------------------
@@ -45,6 +61,18 @@ vulture:
     poetry run vulture validator --ignore-names=owner
 
 # ------------------------------------------------------------------------------
+# Prettier - File Formatting
+# ------------------------------------------------------------------------------
+
+# Check for prettier issues
+prettier-check:
+    prettier . --check
+
+# Fix prettier issues
+prettier-format:
+    prettier . --check --write
+
+# ------------------------------------------------------------------------------
 # Justfile
 # ------------------------------------------------------------------------------
 
@@ -55,3 +83,13 @@ format:
 # Check for Just format issues
 format-check:
     just --fmt --check --unstable
+
+# ------------------------------------------------------------------------------
+# Git Hooks
+# ------------------------------------------------------------------------------
+
+# Install pre commit hook to run on all commits
+install-git-hooks:
+    cp -f githooks/pre-commit .git/hooks/pre-commit
+    cp -f githooks/post-commit .git/hooks/post-commit
+    chmod ug+x .git/hooks/*
