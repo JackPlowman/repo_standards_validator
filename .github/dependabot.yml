@@ -19,3 +19,21 @@ updates:
         update-types:
           - "patch"
           - "minor"
+
+  - package-ecosystem: "pip"
+    directory: "/"
+    commit-message:
+      prefix: "deps(python)"
+    schedule:
+      interval: "weekly"
+      day: "saturday"
+      time: "01:00"
+      timezone: "Europe/London"
+    target-branch: "main"
+    groups:
+      python:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+          - "minor"
