@@ -39,8 +39,5 @@
       ]
     }
   },
-  "required": [
-    "owner",
-    "repositories"
-  ]
+  "required": ["owner", "repositories"]
 }
