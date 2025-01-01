@@ -91,3 +91,18 @@ jobs:
         uses: extractions/setup-just@v2
       - name: Check Justfile Format
         run: just format-check
+
+  run-code-limit:
+    name: Run CodeLimit
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: "Run CodeLimit"
+        uses: getcodelimit/codelimit-action@v1
