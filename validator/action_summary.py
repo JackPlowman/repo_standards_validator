@@ -19,4 +19,6 @@ def generate_action_summary(analysed_repositories: dict) -> None:
         with Path(environ["GITHUB_STEP_SUMMARY"]).open("w") as file:
             dump(analysed_repositories, file, indent=4)
     else:
-        logger.debug("Not running in GitHub Actions, skipping generating action summary")
+        logger.debug(
+            "Not running in GitHub Actions, skipping generating action summary"
+        )

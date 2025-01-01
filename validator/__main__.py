@@ -10,6 +10,7 @@ from .types import AnalysedRepositories
 from json import dump
 from dataclasses import asdict
 from .action_summary import generate_action_summary
+
 logger: stdlib.BoundLogger = get_logger()
 
 
