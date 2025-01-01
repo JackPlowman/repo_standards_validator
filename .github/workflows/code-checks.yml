@@ -145,7 +145,7 @@ jobs:
       - name: Set up dependencies
         uses: ./.github/actions/setup-dependencies
       - name: Generate Ruff Sarif
-        run: uv run ruff check .
+        run: just ruff-lint-check
         env:
           RUFF_OUTPUT_FORMAT: "sarif"
           RUFF_OUTPUT_FILE: "ruff-results.sarif"
@@ -156,12 +156,12 @@ jobs:
           sarif_file: ruff-results.sarif
           wait-for-processing: true
       - name: Check Python Code Format (Ruff)
-        run: uv run ruff format --check .
+        run: just ruff-format-check
         env:
           RUFF_OUTPUT_FORMAT: "github"
       - name: Check Python Code Linting (Ruff)
-        run: uv run ruff check .
+        run: just ruff-lint-check
         env:
           RUFF_OUTPUT_FORMAT: "github"
       - name: Check Python Code for Dead Code (Vulture)
-        run: uv run vulture .
+        run: just vulture
