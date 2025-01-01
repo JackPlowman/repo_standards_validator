@@ -215,3 +215,17 @@ jobs:
           path: tests/schema_validation
       - name: Validate Schema
         run: just validate-schema
+
+  unit-test:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Setup Dependencies
+        uses: ./.github/actions/setup-dependencies
+      - name: Run Unit Tests
+        run: just unit-test
