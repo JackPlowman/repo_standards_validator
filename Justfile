@@ -42,7 +42,7 @@ ruff-format-fix:
 
 # Check for unused code
 vulture:
-    poetry run vulture validator
+    poetry run vulture validator --ignore-names=owner
 
 # ------------------------------------------------------------------------------
 # Justfile
