@@ -1,7 +1,7 @@
 {
   "version": "0.17.0",
-  "uuid": "1948cacd-0013-4a84-a14d-d3d0c135e676",
-  "timestamp": "2025-01-01T09:59:02+00:00",
+  "uuid": "81df3b07-4efa-4bbb-a9ed-0304d64a1dab",
+  "timestamp": "2025-01-01T10:08:57+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -11,9 +11,9 @@
   "codebase": {
     "totals": {
       "Python": {
-        "files": 7,
-        "lines_of_code": 74,
-        "functions": 7,
+        "files": 8,
+        "lines_of_code": 85,
+        "functions": 8,
         "hard_to_maintain": 0,
         "unmaintainable": 0
       }
@@ -23,19 +23,20 @@
         "entries": [
           "validator/"
         ],
-        "profile": [33, 41, 0, 0]
+        "profile": [43, 42, 0, 0]
       },
       "validator/": {
         "entries": [
           "repository_checks.py",
           "configuration.py",
+          "action_summary.py",
           "repositories.py",
           "__init__.py",
           "custom_logging.py",
           "types.py",
           "__main__.py"
         ],
-        "profile": [33, 41, 0, 0]
+        "profile": [43, 42, 0, 0]
       }
     },
     "files": {
@@ -57,6 +58,15 @@
         "measurements": [
           {"unit_name": "__init__", "start": {"line": 13, "column": 5}, "end": {"line": 16, "column": 79}, "value": 4},
           {"unit_name": "get_and_check_for_value", "start": {"line": 18, "column": 5}, "end": {"line": 32, "column": 30}, "value": 8}
+        ]
+      },
+      "validator/action_summary.py": {
+        "checksum": "04aab842e61513be157423ee8a3b4e9b",
+        "language": "Python",
+        "loc": 10,
+        "profile": [10, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "generate_action_summary", "start": {"line": 10, "column": 1}, "end": {"line": 24, "column": 10}, "value": 10}
         ]
       },
       "validator/repositories.py": {
@@ -94,12 +104,12 @@
         ]
       },
       "validator/__main__.py": {
-        "checksum": "a63b8dd31d95501829da4a2d8951fdf3",
+        "checksum": "d44a920f37116388882faaa0e5d67b6b",
         "language": "Python",
-        "loc": 18,
-        "profile": [0, 18, 0, 0],
+        "loc": 19,
+        "profile": [0, 19, 0, 0],
         "measurements": [
-          {"unit_name": "main", "start": {"line": 16, "column": 1}, "end": {"line": 33, "column": 6}, "value": 18}
+          {"unit_name": "main", "start": {"line": 17, "column": 1}, "end": {"line": 35, "column": 6}, "value": 19}
         ]
       }
     }
