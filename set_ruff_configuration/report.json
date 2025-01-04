@@ -1,0 +1,117 @@
+{
+  "version": "0.17.1",
+  "uuid": "ac5b05fa-62be-42d2-bf2e-fced6e2f9ca5",
+  "timestamp": "2025-01-04T20:10:53+00:00",
+  "root": "/github/workspace",
+  "repository": {
+    "owner": "JackPlowman",
+    "name": "repo_standards_validator",
+    "branch": "HEAD"
+  },
+  "codebase": {
+    "totals": {
+      "Python": {
+        "files": 8,
+        "lines_of_code": 85,
+        "functions": 8,
+        "hard_to_maintain": 0,
+        "unmaintainable": 0
+      }
+    },
+    "tree": {
+      "./": {
+        "entries": [
+          "validator/"
+        ],
+        "profile": [43, 42, 0, 0]
+      },
+      "validator/": {
+        "entries": [
+          "repository_checks.py",
+          "configuration.py",
+          "action_summary.py",
+          "repositories.py",
+          "__init__.py",
+          "custom_logging.py",
+          "types.py",
+          "__main__.py"
+        ],
+        "profile": [43, 42, 0, 0]
+      }
+    },
+    "files": {
+      "validator/repository_checks.py": {
+        "checksum": "e5830d95002fd8eab2300411346539d5",
+        "language": "Python",
+        "loc": 26,
+        "profile": [3, 23, 0, 0],
+        "measurements": [
+          {"unit_name": "check_repository", "start": {"line": 9, "column": 1}, "end": {"line": 38, "column": 6}, "value": 23},
+          {"unit_name": "status_to_bool", "start": {"line": 41, "column": 1}, "end": {"line": 43, "column": 31}, "value": 3}
+        ]
+      },
+      "validator/configuration.py": {
+        "checksum": "5bc03b4a026d175674df34f7fb66a080",
+        "language": "Python",
+        "loc": 12,
+        "profile": [12, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "__init__", "start": {"line": 13, "column": 5}, "end": {"line": 16, "column": 79}, "value": 4},
+          {"unit_name": "get_and_check_for_value", "start": {"line": 18, "column": 5}, "end": {"line": 32, "column": 30}, "value": 8}
+        ]
+      },
+      "validator/action_summary.py": {
+        "checksum": "08cb9b32871ce3cca8dbc0270fdb5111",
+        "language": "Python",
+        "loc": 10,
+        "profile": [10, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "generate_action_summary", "start": {"line": 10, "column": 1}, "end": {"line": 23, "column": 10}, "value": 10}
+        ]
+      },
+      "validator/repositories.py": {
+        "checksum": "9d622d8632095cc4cc01aeabc9b91270",
+        "language": "Python",
+        "loc": 12,
+        "profile": [12, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "retrieve_repositories", "start": {"line": 14, "column": 1}, "end": {"line": 29, "column": 24}, "value": 12}
+        ]
+      },
+      "validator/__init__.py": {
+        "checksum": "d41d8cd98f00b204e9800998ecf8427e",
+        "language": "Python",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
+      "validator/custom_logging.py": {
+        "checksum": "30c4784bd5938c3b9025cab1e7ead5f6",
+        "language": "Python",
+        "loc": 6,
+        "profile": [6, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "set_up_custom_logging", "start": {"line": 9, "column": 1}, "end": {"line": 14, "column": 64}, "value": 6}
+        ]
+      },
+      "validator/types.py": {
+        "checksum": "89917d655dce3ab21121b5f469be2c39",
+        "language": "Python",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
+        ]
+      },
+      "validator/__main__.py": {
+        "checksum": "ea8c607b64f0bc05a0d75398f75c139f",
+        "language": "Python",
+        "loc": 19,
+        "profile": [0, 19, 0, 0],
+        "measurements": [
+          {"unit_name": "main", "start": {"line": 19, "column": 1}, "end": {"line": 37, "column": 6}, "value": 19}
+        ]
+      }
+    }
+  }
+}
