@@ -1,6 +1,9 @@
-from ..__main__ import main
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
+
+from validator.__main__ import main
+
 FILE_PATH = "validator.__main__"
+
 
 @patch(f"{FILE_PATH}.set_up_custom_logging")
 @patch(f"{FILE_PATH}.Configuration")
