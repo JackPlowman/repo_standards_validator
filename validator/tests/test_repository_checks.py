@@ -1,43 +1,17 @@
-from ..repository_checks import check_repository, status_to_bool
+from unittest.mock import MagicMock
 
 import pytest
+
+from validator.repository_checks import check_repository, status_to_bool
 
 
 def test_check_repository() -> None:
     # Arrange
-    class MockRepository:
-        def __init__(
-            self,
-            secret_scanning_push_protection,
-            secret_scanning,
-            dependabot_security_updates,
-        ):
-            self.security_and_analysis = MockSecurityAndAnalysis(
-                secret_scanning_push_protection,
-                secret_scanning,
-                dependabot_security_updates,
-            )
-            self.name = "test-repo"
-            self.full_name = "owner/test-repo"
-
-    class MockSecurityAndAnalysis:
-        def __init__(
-            self,
-            secret_scanning_push_protection,
-            secret_scanning,
-            dependabot_security_updates,
-        ):
-            self.secret_scanning_push_protection = MockStatus(
-                secret_scanning_push_protection
-            )
-            self.secret_scanning = MockStatus(secret_scanning)
-            self.dependabot_security_updates = MockStatus(dependabot_security_updates)
-
-    class MockStatus:
-        def __init__(self, status):
-            self.status = status
-
-    repository = MockRepository("enabled", "enabled", "enabled")
+    repository = MagicMock(
+        secret_scanning_push_protection="enabled",  # noqa: S106
+        secret_scanning="enabled",  # noqa: S106
+        dependabot_security_updates="enabled",
+    )
     # Act
     analysed_repository = check_repository(repository)
     # Assert
@@ -49,7 +23,7 @@ def test_check_repository() -> None:
 
 
 @pytest.mark.parametrize(
-    "status, expected",
+    ("status", "expected"),
     [
         ("enabled", True),
         ("disabled", False),

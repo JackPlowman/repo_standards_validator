@@ -1,6 +1,7 @@
-from .types import Repository as AnalysedRepository
-from structlog import get_logger, stdlib
 from github import Repository as GitHubRepositoryType
+from structlog import get_logger, stdlib
+
+from .types import Repository as AnalysedRepository
 
 logger: stdlib.BoundLogger = get_logger()
 
