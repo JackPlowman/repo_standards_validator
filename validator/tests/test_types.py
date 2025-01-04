@@ -1,7 +1,7 @@
-from ..types import AnalysedRepositories, Repository
+from validator.types import AnalysedRepositories, Repository
 
 
-def test_repository():
+def test_repository() -> None:
     # Act
     repo = Repository(
         name="test-repo",
@@ -18,7 +18,7 @@ def test_repository():
     assert repo.dependabot_security_updates is True
 
 
-def test_analysed_repositories_():
+def test_analysed_repositories_() -> None:
     # Arrange
     repos = [
         {

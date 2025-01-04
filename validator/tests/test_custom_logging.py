@@ -1,5 +1,4 @@
-from unittest.mock import patch, MagicMock
-
+from unittest.mock import MagicMock, patch
 
 from validator.custom_logging import set_up_custom_logging
 

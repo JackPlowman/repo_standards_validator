@@ -1,4 +1,4 @@
-from ..action_summary import generate_action_summary
+from validator.action_summary import generate_action_summary
 
 
 def test_generate_action_summary() -> None:

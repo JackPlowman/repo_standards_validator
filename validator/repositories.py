@@ -1,8 +1,6 @@
 from __future__ import annotations
 
-
 from typing import TYPE_CHECKING
-
 
 from github import Github, PaginatedList, Repository
 from structlog import get_logger, stdlib

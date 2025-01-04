@@ -1,6 +1,6 @@
 from os import environ
 
-from ..configuration import Configuration
+from validator.configuration import Configuration
 
 
 def test_configuration() -> None:
