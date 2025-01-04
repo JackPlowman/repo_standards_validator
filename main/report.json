@@ -1,7 +1,7 @@
 {
-  "version": "0.17.0",
-  "uuid": "15720043-2b95-4e34-8708-2a5f08bbc8ab",
-  "timestamp": "2025-01-01T13:32:38+00:00",
+  "version": "0.17.1",
+  "uuid": "7a7138b0-47b3-442e-8219-7e126ccbbef3",
+  "timestamp": "2025-01-04T20:32:41+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -41,13 +41,13 @@
     },
     "files": {
       "validator/repository_checks.py": {
-        "checksum": "607902b339343385a5f81bb60f319d7f",
+        "checksum": "e5830d95002fd8eab2300411346539d5",
         "language": "Python",
         "loc": 26,
         "profile": [3, 23, 0, 0],
         "measurements": [
-          {"unit_name": "check_repository", "start": {"line": 8, "column": 1}, "end": {"line": 37, "column": 6}, "value": 23},
-          {"unit_name": "status_to_bool", "start": {"line": 40, "column": 1}, "end": {"line": 42, "column": 31}, "value": 3}
+          {"unit_name": "check_repository", "start": {"line": 9, "column": 1}, "end": {"line": 38, "column": 6}, "value": 23},
+          {"unit_name": "status_to_bool", "start": {"line": 41, "column": 1}, "end": {"line": 43, "column": 31}, "value": 3}
         ]
       },
       "validator/configuration.py": {
@@ -61,21 +61,21 @@
         ]
       },
       "validator/action_summary.py": {
-        "checksum": "04aab842e61513be157423ee8a3b4e9b",
+        "checksum": "08cb9b32871ce3cca8dbc0270fdb5111",
         "language": "Python",
         "loc": 10,
         "profile": [10, 0, 0, 0],
         "measurements": [
-          {"unit_name": "generate_action_summary", "start": {"line": 10, "column": 1}, "end": {"line": 24, "column": 10}, "value": 10}
+          {"unit_name": "generate_action_summary", "start": {"line": 10, "column": 1}, "end": {"line": 23, "column": 10}, "value": 10}
         ]
       },
       "validator/repositories.py": {
-        "checksum": "5fab331d4f1bb3d2f2e30783f55a45f4",
+        "checksum": "9d622d8632095cc4cc01aeabc9b91270",
         "language": "Python",
         "loc": 12,
         "profile": [12, 0, 0, 0],
         "measurements": [
-          {"unit_name": "retrieve_repositories", "start": {"line": 16, "column": 1}, "end": {"line": 31, "column": 24}, "value": 12}
+          {"unit_name": "retrieve_repositories", "start": {"line": 14, "column": 1}, "end": {"line": 29, "column": 24}, "value": 12}
         ]
       },
       "validator/__init__.py": {
@@ -104,12 +104,12 @@
         ]
       },
       "validator/__main__.py": {
-        "checksum": "d44a920f37116388882faaa0e5d67b6b",
+        "checksum": "4996550c5fcfdcc9d0aa53275d361993",
         "language": "Python",
         "loc": 19,
         "profile": [0, 19, 0, 0],
         "measurements": [
-          {"unit_name": "main", "start": {"line": 17, "column": 1}, "end": {"line": 35, "column": 6}, "value": 19}
+          {"unit_name": "main", "start": {"line": 19, "column": 1}, "end": {"line": 37, "column": 6}, "value": 19}
         ]
       }
     }
