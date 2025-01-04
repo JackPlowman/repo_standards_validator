@@ -28,7 +28,7 @@ def main() -> None:
     analysed_repositories = AnalysedRepositories(
         owner=configuration.repository_owner, repositories=raw_analysed_repositories
     )
-    with Path("repositories.json").open() as file:
+    with Path("repositories.json").open("w") as file:
         dump(analysed_repositories, file, indent=4)
     generate_action_summary(analysed_repositories)
     logger.info(
