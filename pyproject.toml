@@ -1,5 +1,9 @@
-[tool.poetry]
+[project]
 name = "repo_standards_validator"
+version = "1.0.0"
+requires-python = ">=3.13"
+
+[tool.poetry]
 package-mode = false
 
 [tool.poetry.dependencies]
@@ -9,14 +13,14 @@ pygithub = "2.5.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.4"
-pytest-cov = "^6.0.0"
-ruff = "0.8.6"
+pytest-cov = "6.0.0"
+ruff = "0.9.1"
 vulture = "2.14"
-zizmor = "1.0.0"
-check-jsonschema = "0.30.0"
+zizmor = "1.0.1"
+check-jsonschema = "0.31.0"
 
 [build-system]
-requires = ["poetry-core"]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
@@ -34,7 +38,6 @@ ignore = [
   "SIM112",  # Ignore Lowercase environment variables (used for GitHub actions)
 ]
 
-# Allow autofix for all enabled rules (when `--fix`) is provided.
 fixable = ["ALL"]
 unfixable = []
 
@@ -57,13 +60,13 @@ exclude = [
 ]
 
 # Allow unused variables when underscore-prefixed.
-dummy-variable-rgx = "(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
 [tool.ruff.lint.per-file-ignores]
 "**test_*.py" = ["S101", "D101", "D102", "D103", "SLF001", "FBT001"]
 
 [tool.ruff.lint.pydocstyle]
-convention = "google" # Use Google docstring convention.
+convention = "google"
 
 [tool.ruff.lint.isort]
 known-first-party = ["tests"]
