@@ -1,12 +1,12 @@
 {
-  "version": "0.17.1",
-  "uuid": "e6805541-e2b8-4611-850d-5736fc6399b4",
-  "timestamp": "2025-01-04T20:33:27+00:00",
+  "version": "0.18.1",
+  "uuid": "fc25b6fe-59b6-43c8-a4b4-df24d8f2cc6b",
+  "timestamp": "2025-01-11T20:39:41+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
     "name": "repo_standards_validator",
-    "branch": "HEAD"
+    "branch": "release-please--branches--main"
   },
   "codebase": {
     "totals": {
