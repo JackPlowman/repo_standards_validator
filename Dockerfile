@@ -6,7 +6,7 @@ WORKDIR /
 
 COPY pyproject.toml poetry.lock ./
 RUN pip install --no-cache-dir poetry==2.0.0 && \
-  pip install poetry-plugin-export && \
+  pip install --no-cache-dir poetry-plugin-export==1.8.0 && \
   poetry export --output=requirements.txt
 
 FROM python:3.13-alpine AS validator
