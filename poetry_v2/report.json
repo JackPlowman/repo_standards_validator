@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "91565795-e44c-4f8a-ae78-8531ebda5e03",
-  "timestamp": "2025-01-12T10:59:22+00:00",
+  "uuid": "ec8ff26f-1ff9-47b0-bdcc-78297c752a2b",
+  "timestamp": "2025-01-12T11:04:04+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -29,11 +29,11 @@
         "entries": [
           "repository_checks.py",
           "configuration.py",
+          "custom_types.py",
           "action_summary.py",
           "repositories.py",
           "__init__.py",
           "custom_logging.py",
-          "types.py",
           "__main__.py"
         ],
         "profile": [43, 42, 0, 0]
@@ -41,7 +41,7 @@
     },
     "files": {
       "validator/repository_checks.py": {
-        "checksum": "e5830d95002fd8eab2300411346539d5",
+        "checksum": "8b905a75a0678d8bc507b6e65d9059a6",
         "language": "Python",
         "loc": 26,
         "profile": [3, 23, 0, 0],
@@ -58,6 +58,14 @@
         "measurements": [
           {"unit_name": "__init__", "start": {"line": 13, "column": 5}, "end": {"line": 16, "column": 79}, "value": 4},
           {"unit_name": "get_and_check_for_value", "start": {"line": 18, "column": 5}, "end": {"line": 32, "column": 30}, "value": 8}
+        ]
+      },
+      "validator/custom_types.py": {
+        "checksum": "89917d655dce3ab21121b5f469be2c39",
+        "language": "Python",
+        "loc": 0,
+        "profile": [0, 0, 0, 0],
+        "measurements": [
         ]
       },
       "validator/action_summary.py": {
@@ -95,16 +103,8 @@
           {"unit_name": "set_up_custom_logging", "start": {"line": 9, "column": 1}, "end": {"line": 14, "column": 64}, "value": 6}
         ]
       },
-      "validator/types.py": {
-        "checksum": "89917d655dce3ab21121b5f469be2c39",
-        "language": "Python",
-        "loc": 0,
-        "profile": [0, 0, 0, 0],
-        "measurements": [
-        ]
-      },
       "validator/__main__.py": {
-        "checksum": "4996550c5fcfdcc9d0aa53275d361993",
+        "checksum": "1a03e014387536bfde9ec23dec926ed0",
         "language": "Python",
         "loc": 19,
         "profile": [0, 19, 0, 0],
