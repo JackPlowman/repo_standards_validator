@@ -2,7 +2,7 @@
 # Common Commands
 # ------------------------------------------------------------------------------
 
-# Install python dependencies
+# Install all python dependencies (including dev dependencies)
 install:
     poetry install -E dev
 
