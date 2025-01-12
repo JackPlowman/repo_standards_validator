@@ -1,4 +1,4 @@
-from validator.types import AnalysedRepositories, Repository
+from validator.custom_types import AnalysedRepositories, Repository
 
 
 def test_repository() -> None:
