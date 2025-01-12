@@ -1,23 +1,27 @@
 [project]
 name = "repo_standards_validator"
-version = "1.0.0"
 requires-python = ">=3.13"
+dynamic = ["version"]
+dependencies = [
+  "structlog==24.4.0",
+  "pygithub==2.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.3.4",
+  "pytest-cov==6.0.0",
+  "ruff==0.9.1",
+  "vulture==2.14",
+  "zizmor==1.0.1",
+  "check-jsonschema==0.31.0",
+]
 
 [tool.poetry]
 package-mode = false
 
-[tool.poetry.dependencies]
-python = "^3.13"
-structlog = "24.4.0"
-pygithub = "2.5.0"
-
-[tool.poetry.group.dev.dependencies]
-pytest = "^8.3.4"
-pytest-cov = "6.0.0"
-ruff = "0.9.1"
-vulture = "2.14"
-zizmor = "1.0.1"
-check-jsonschema = "0.31.0"
+[tool.poetry.requires-plugins]
+poetry-plugin-export = ">=1.8"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
