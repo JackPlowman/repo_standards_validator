@@ -9,9 +9,9 @@ from structlog import get_logger, stdlib
 from .action_summary import generate_action_summary
 from .configuration import Configuration
 from .custom_logging import set_up_custom_logging
+from .custom_types import AnalysedRepositories
 from .repositories import retrieve_repositories
 from .repository_checks import check_repository
-from .types import AnalysedRepositories
 
 logger: stdlib.BoundLogger = get_logger()
 

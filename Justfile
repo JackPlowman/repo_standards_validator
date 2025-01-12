@@ -2,9 +2,9 @@
 # Common Commands
 # ------------------------------------------------------------------------------
 
-# Install python dependencies
+# Install all python dependencies (including dev dependencies)
 install:
-    poetry install
+    poetry install -E dev
 
 # Run the validator
 run:
