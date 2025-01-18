@@ -14,7 +14,10 @@ def test_repository() -> None:
     # Assert
     assert repo.name == "test-repo"
     assert repo.full_name == "owner/test-repo"
-    assert repo.repository_link == "https://github.com/JackPlowman/repo_standards_validator"
+    assert (
+        repo.repository_link
+        == "https://github.com/JackPlowman/repo_standards_validator"
+    )
     assert repo.secret_scanning_push_protection is True
     assert repo.secret_scanning is True
     assert repo.dependabot_security_updates is True
