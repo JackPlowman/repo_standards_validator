@@ -32,6 +32,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
     return AnalysedRepository(
         name=repository.name,
         full_name=repository.full_name,
+        repository_link=repository.html_url,
         secret_scanning_push_protection=status_to_bool(secret_scanning_push_protection),
         secret_scanning=status_to_bool(secret_scanning),
         dependabot_security_updates=status_to_bool(dependabot_security_updates),

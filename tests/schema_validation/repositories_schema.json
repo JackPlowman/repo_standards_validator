@@ -18,6 +18,9 @@
             "full_name": {
               "type": "string"
             },
+            "repository_link": {
+              "type": "string"
+            },
             "secret_scanning_push_protection": {
               "type": "boolean"
             },
@@ -31,6 +34,7 @@
           "required": [
             "name",
             "full_name",
+            "repository_link",
             "secret_scanning_push_protection",
             "secret_scanning",
             "dependabot_security_updates"
