@@ -10,6 +10,10 @@ install:
 run:
     poetry run python -m validator
 
+# Validates Pyproject
+pyproject-check:
+    poetry check
+
 # ------------------------------------------------------------------------------
 # Test Commands
 # ------------------------------------------------------------------------------
