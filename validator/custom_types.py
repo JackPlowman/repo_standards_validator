@@ -12,7 +12,8 @@ class Repository:
     secret_scanning_push_protection: bool
     secret_scanning: bool
     dependabot_security_updates: bool
-
+    open_security_warnings: int
+    code_scanning_alerts: int
 
 class AnalysedRepositories(TypedDict):
     """A representation of a repository with the required settings."""
