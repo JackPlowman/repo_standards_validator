@@ -16,6 +16,7 @@ class Repository:
     has_code_of_conduct: bool
     has_contributing: bool
     has_readme: bool
+    has_project_technologies: bool
 
 
 class AnalysedRepositories(TypedDict):
