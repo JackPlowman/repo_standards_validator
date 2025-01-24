@@ -56,7 +56,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         has_code_of_conduct=has_code_of_conduct,
         has_contributing=has_contributing,
         has_readme=has_readme,
-        has_project_technologies=has_project_technologies
+        has_project_technologies=has_project_technologies,
     )
 
 
