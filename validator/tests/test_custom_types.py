@@ -12,10 +12,7 @@ def test_repository() -> None:
         dependabot_security_updates=True,
         has_security_policy=True,
         has_code_of_conduct=True,
-<<<<<<< HEAD
-=======
         has_contributing=True,
->>>>>>> 3cbd039 (update)
     )
     # Assert
     assert repo.name == "test-repo"
@@ -29,10 +26,7 @@ def test_repository() -> None:
     assert repo.dependabot_security_updates is True
     assert repo.has_security_policy is True
     assert repo.has_code_of_conduct is True
-<<<<<<< HEAD
-=======
     assert repo.has_contributing is True
->>>>>>> 3cbd039 (update)
 
 
 def test_analysed_repositories() -> None:
