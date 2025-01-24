@@ -1,6 +1,6 @@
-from unittest.mock import MagicMock, patch, call
+from unittest.mock import MagicMock, call, patch
 
-from validator.__main__ import main, clean_up
+from validator.__main__ import clean_up, main
 
 FILE_PATH = "validator.__main__"
 
@@ -43,6 +43,8 @@ def test_main(
         repositories=[],
     )
     mock_asdict.assert_not_called()
+
+
 @patch(f"{FILE_PATH}.Path")
 @patch(f"{FILE_PATH}.rmtree")
 def test_clean_up(
