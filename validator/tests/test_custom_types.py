@@ -11,6 +11,7 @@ def test_repository() -> None:
         secret_scanning=True,
         dependabot_security_updates=True,
         has_security_policy=True,
+        has_code_of_conduct=True,
     )
     # Assert
     assert repo.name == "test-repo"
@@ -23,6 +24,7 @@ def test_repository() -> None:
     assert repo.secret_scanning is True
     assert repo.dependabot_security_updates is True
     assert repo.has_security_policy is True
+    assert repo.has_code_of_conduct is True
 
 
 def test_analysed_repositories() -> None:
