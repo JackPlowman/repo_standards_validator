@@ -13,6 +13,7 @@ class Repository:
     secret_scanning: bool
     dependabot_security_updates: bool
     has_security_policy: bool
+    has_code_of_conduct: bool
 
 
 class AnalysedRepositories(TypedDict):

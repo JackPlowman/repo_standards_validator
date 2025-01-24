@@ -16,6 +16,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
     Returns:
         AnalysedRepository: The repository with the required settings.
     """
+    repository_dir = f"validator/cloned_repositories/{repository.name}"
     logger.info("Checking repository", repository=repository.full_name)
     secret_scanning_push_protection = (
         repository.security_and_analysis.secret_scanning_push_protection.status
@@ -24,15 +25,15 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
     dependabot_security_updates = (
         repository.security_and_analysis.dependabot_security_updates.status
     )
-    has_security_policy = find_file_recursive(
-        f"validator/cloned_repositories/{repository.name}", "SECURITY.md"
-    )
+    has_security_policy = find_file_recursive(repository_dir, "SECURITY.md")
+    has_code_of_conduct = find_file_recursive(repository_dir, "CODE_OF_CONDUCT.md")
     logger.debug(
         "Repository details",
         secret_scanning_push_protection=secret_scanning_push_protection,
         secret_scanning=secret_scanning,
         dependabot_security_updates=dependabot_security_updates,
         has_security_policy=has_security_policy,
+        has_code_of_conduct=has_code_of_conduct,
     )
     return AnalysedRepository(
         name=repository.name,
@@ -42,6 +43,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         secret_scanning=status_to_bool(secret_scanning),
         dependabot_security_updates=status_to_bool(dependabot_security_updates),
         has_security_policy=has_security_policy,
+        has_code_of_conduct=has_code_of_conduct,
     )
 
 
