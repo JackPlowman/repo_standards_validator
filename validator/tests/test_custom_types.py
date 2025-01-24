@@ -25,7 +25,7 @@ def test_repository() -> None:
     assert repo.has_security_policy is True
 
 
-def test_analysed_repositories_() -> None:
+def test_analysed_repositories() -> None:
     # Arrange
     repos = [
         {
