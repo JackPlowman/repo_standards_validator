@@ -79,6 +79,7 @@ def test_get_code_scanning_alerts(alerts: MagicMock, count: int) -> None:
     # Assert
     assert result == count
 
+
 def test_get_code_scanning_alerts__exception() -> None:
     # Arrange
     repository = MagicMock()
