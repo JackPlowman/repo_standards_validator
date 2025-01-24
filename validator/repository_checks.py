@@ -31,6 +31,9 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
     )
     has_contributing = find_file_recursive(repository_directory, "CONTRIBUTING.md")
     has_readme = find_file_recursive(repository_directory, "README.md")
+    has_project_technologies = find_file_recursive(
+        repository_directory, "PROJECT_TECHNOLOGIES.md"
+    )
     logger.debug(
         "Repository details",
         secret_scanning_push_protection=secret_scanning_push_protection,
@@ -40,6 +43,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         has_code_of_conduct=has_code_of_conduct,
         has_contributing=has_contributing,
         has_readme=has_readme,
+        has_project_technologies=has_project_technologies,
     )
     return AnalysedRepository(
         name=repository.name,
@@ -52,6 +56,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         has_code_of_conduct=has_code_of_conduct,
         has_contributing=has_contributing,
         has_readme=has_readme,
+        has_project_technologies=has_project_technologies
     )
 
 
