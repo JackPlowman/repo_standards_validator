@@ -26,7 +26,9 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         repository.security_and_analysis.dependabot_security_updates.status
     )
     has_security_policy = find_file_recursive(repository_directory, "SECURITY.md")
-    has_code_of_conduct = find_file_recursive(repository_directory, "CODE_OF_CONDUCT.md")
+    has_code_of_conduct = find_file_recursive(
+        repository_directory, "CODE_OF_CONDUCT.md"
+    )
     has_contributing = find_file_recursive(repository_directory, "CONTRIBUTING.md")
     has_readme = find_file_recursive(repository_directory, "README.md")
     logger.debug(
