@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "2268ded7-05ea-4be1-bc88-df4a0765e1c3",
-  "timestamp": "2025-01-24T22:44:06+00:00",
+  "uuid": "29da1cb0-c28c-439b-a4b3-cd55c8a8e717",
+  "timestamp": "2025-01-24T22:55:56+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -61,7 +61,7 @@
         ]
       },
       "validator/custom_types.py": {
-        "checksum": "a67030dc950168ce36ab39f3ce82cb80",
+        "checksum": "1657f1dfa8942550722193274dd99741",
         "language": "Python",
         "loc": 0,
         "profile": [0, 0, 0, 0],
@@ -69,14 +69,14 @@
         ]
       },
       "validator/repository_checks.py": {
-        "checksum": "8bcd415fad1938852efee0330758f231",
+        "checksum": "92bdba9eaf257deaa9e04c1f8ece97d3",
         "language": "Python",
         "loc": 66,
         "profile": [16, 0, 50, 0],
         "measurements": [
-          {"unit_name": "check_repository", "start": {"line": 10, "column": 1}, "end": {"line": 69, "column": 6}, "value": 50},
-          {"unit_name": "status_to_bool", "start": {"line": 72, "column": 1}, "end": {"line": 74, "column": 31}, "value": 3},
-          {"unit_name": "get_code_scanning_alerts", "start": {"line": 77, "column": 1}, "end": {"line": 97, "column": 17}, "value": 13}
+          {"unit_name": "check_repository", "start": {"line": 10, "column": 1}, "end": {"line": 68, "column": 6}, "value": 50},
+          {"unit_name": "status_to_bool", "start": {"line": 71, "column": 1}, "end": {"line": 73, "column": 31}, "value": 3},
+          {"unit_name": "get_code_scanning_alerts", "start": {"line": 76, "column": 1}, "end": {"line": 96, "column": 17}, "value": 13}
         ]
       },
       "validator/git_actions.py": {
