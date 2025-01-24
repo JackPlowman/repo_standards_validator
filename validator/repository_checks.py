@@ -37,7 +37,6 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
     )
     has_license = find_file_recursive(repository_directory, "LICENSE")
 
-
     logger.debug(
         "Repository details",
         secret_scanning_push_protection=secret_scanning_push_protection,

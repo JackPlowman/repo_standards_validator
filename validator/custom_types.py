@@ -21,7 +21,6 @@ class Repository:
     has_license: bool
 
 
-
 class AnalysedRepositories(TypedDict):
     """A representation of a repository with the required settings."""
 
