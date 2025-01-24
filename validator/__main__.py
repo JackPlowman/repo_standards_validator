@@ -4,6 +4,7 @@ from dataclasses import asdict
 from json import dump
 from pathlib import Path
 from shutil import rmtree
+
 from structlog import get_logger, stdlib
 
 from .action_summary import generate_action_summary
@@ -48,6 +49,7 @@ def clean_up() -> None:
     for repository in cloned_repositories.iterdir():
         if repository.is_dir():
             rmtree(repository)
+
 
 if __name__ == "__main__":
     main()
