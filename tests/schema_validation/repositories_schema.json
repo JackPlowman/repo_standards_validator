@@ -32,7 +32,7 @@
               "type": "boolean"
             },
             "code_scanning_alerts": {
-              "type": "boolean"
+              "type": "integer"
             },
             "has_security_policy": {
               "type": "boolean"
