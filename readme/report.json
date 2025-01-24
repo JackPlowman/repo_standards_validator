@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "78eb82dd-6d67-4503-8cfb-2c0369bf7e85",
-  "timestamp": "2025-01-24T22:06:27+00:00",
+  "uuid": "8a1590c9-18a1-43e7-b5d5-4f22b5df1751",
+  "timestamp": "2025-01-24T22:07:51+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -12,7 +12,7 @@
     "totals": {
       "Python": {
         "files": 10,
-        "lines_of_code": 121,
+        "lines_of_code": 123,
         "functions": 11,
         "hard_to_maintain": 1,
         "unmaintainable": 0
@@ -23,7 +23,7 @@
         "entries": [
           "validator/"
         ],
-        "profile": [62, 22, 37, 0]
+        "profile": [62, 22, 39, 0]
       },
       "validator/": {
         "entries": [
@@ -38,7 +38,7 @@
           "__init__.py",
           "custom_logging.py"
         ],
-        "profile": [62, 22, 37, 0]
+        "profile": [62, 22, 39, 0]
       }
     },
     "files": {
@@ -69,13 +69,13 @@
         ]
       },
       "validator/repository_checks.py": {
-        "checksum": "58d8ed7ac84a71b6e91df794200a5341",
+        "checksum": "0d0be5a23b78345829cfc59348f5c809",
         "language": "Python",
-        "loc": 40,
-        "profile": [3, 0, 37, 0],
+        "loc": 42,
+        "profile": [3, 0, 39, 0],
         "measurements": [
-          {"unit_name": "check_repository", "start": {"line": 10, "column": 1}, "end": {"line": 53, "column": 6}, "value": 37},
-          {"unit_name": "status_to_bool", "start": {"line": 56, "column": 1}, "end": {"line": 58, "column": 31}, "value": 3}
+          {"unit_name": "check_repository", "start": {"line": 10, "column": 1}, "end": {"line": 55, "column": 6}, "value": 39},
+          {"unit_name": "status_to_bool", "start": {"line": 58, "column": 1}, "end": {"line": 60, "column": 31}, "value": 3}
         ]
       },
       "validator/git_actions.py": {
