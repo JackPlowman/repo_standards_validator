@@ -17,6 +17,7 @@ class Repository:
     has_contributing: bool
     has_readme: bool
     has_project_technologies: bool
+    has_license: bool
 
 
 class AnalysedRepositories(TypedDict):
