@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "f3bd930c-94ff-4f1e-9fa5-3f59aead2dde",
-  "timestamp": "2025-01-23T13:44:31+00:00",
+  "uuid": "2268ded7-05ea-4be1-bc88-df4a0765e1c3",
+  "timestamp": "2025-01-24T22:44:06+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -11,10 +11,10 @@
   "codebase": {
     "totals": {
       "Python": {
-        "files": 8,
-        "lines_of_code": 102,
-        "functions": 9,
-        "hard_to_maintain": 0,
+        "files": 10,
+        "lines_of_code": 147,
+        "functions": 12,
+        "hard_to_maintain": 1,
         "unmaintainable": 0
       }
     },
@@ -23,20 +23,22 @@
         "entries": [
           "validator/"
         ],
-        "profile": [56, 46, 0, 0]
+        "profile": [75, 22, 50, 0]
       },
       "validator/": {
         "entries": [
           "action_summary.py",
+          "file.py",
           "custom_types.py",
           "repository_checks.py",
+          "git_actions.py",
           "configuration.py",
           "__main__.py",
           "repositories.py",
           "__init__.py",
           "custom_logging.py"
         ],
-        "profile": [56, 46, 0, 0]
+        "profile": [75, 22, 50, 0]
       }
     },
     "files": {
@@ -49,8 +51,17 @@
           {"unit_name": "generate_action_summary", "start": {"line": 10, "column": 1}, "end": {"line": 23, "column": 10}, "value": 10}
         ]
       },
+      "validator/file.py": {
+        "checksum": "489d5d3ac5eef159148b9d7cb8f7ca68",
+        "language": "Python",
+        "loc": 7,
+        "profile": [7, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "find_file_recursive", "start": {"line": 4, "column": 1}, "end": {"line": 20, "column": 17}, "value": 7}
+        ]
+      },
       "validator/custom_types.py": {
-        "checksum": "2acd6e667b7e58b2a682d9206f590519",
+        "checksum": "a67030dc950168ce36ab39f3ce82cb80",
         "language": "Python",
         "loc": 0,
         "profile": [0, 0, 0, 0],
@@ -58,14 +69,23 @@
         ]
       },
       "validator/repository_checks.py": {
-        "checksum": "7ca4eb52070a7bb237deef1989d1f6d5",
+        "checksum": "8bcd415fad1938852efee0330758f231",
         "language": "Python",
-        "loc": 43,
-        "profile": [16, 27, 0, 0],
+        "loc": 66,
+        "profile": [16, 0, 50, 0],
         "measurements": [
-          {"unit_name": "check_repository", "start": {"line": 9, "column": 1}, "end": {"line": 44, "column": 6}, "value": 27},
-          {"unit_name": "status_to_bool", "start": {"line": 47, "column": 1}, "end": {"line": 49, "column": 31}, "value": 3},
-          {"unit_name": "get_code_scanning_alerts", "start": {"line": 52, "column": 1}, "end": {"line": 72, "column": 17}, "value": 13}
+          {"unit_name": "check_repository", "start": {"line": 10, "column": 1}, "end": {"line": 69, "column": 6}, "value": 50},
+          {"unit_name": "status_to_bool", "start": {"line": 72, "column": 1}, "end": {"line": 74, "column": 31}, "value": 3},
+          {"unit_name": "get_code_scanning_alerts", "start": {"line": 77, "column": 1}, "end": {"line": 97, "column": 17}, "value": 13}
+        ]
+      },
+      "validator/git_actions.py": {
+        "checksum": "53dc335d69908d6e01bb841d80cdcdec",
+        "language": "Python",
+        "loc": 5,
+        "profile": [5, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "clone_repository", "start": {"line": 4, "column": 1}, "end": {"line": 13, "column": 6}, "value": 5}
         ]
       },
       "validator/configuration.py": {
@@ -79,12 +99,13 @@
         ]
       },
       "validator/__main__.py": {
-        "checksum": "1a03e014387536bfde9ec23dec926ed0",
+        "checksum": "17f720f2847d92a3c2a0d77763a7e3c1",
         "language": "Python",
-        "loc": 19,
-        "profile": [0, 19, 0, 0],
+        "loc": 29,
+        "profile": [7, 22, 0, 0],
         "measurements": [
-          {"unit_name": "main", "start": {"line": 19, "column": 1}, "end": {"line": 37, "column": 6}, "value": 19}
+          {"unit_name": "main", "start": {"line": 21, "column": 1}, "end": {"line": 42, "column": 15}, "value": 22},
+          {"unit_name": "clean_up", "start": {"line": 45, "column": 1}, "end": {"line": 51, "column": 31}, "value": 7}
         ]
       },
       "validator/repositories.py": {
