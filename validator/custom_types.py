@@ -12,6 +12,7 @@ class Repository:
     secret_scanning_push_protection: bool
     secret_scanning: bool
     dependabot_security_updates: bool
+    code_scanning_alerts: int
     has_security_policy: bool
     has_code_of_conduct: bool
     has_contributing: bool

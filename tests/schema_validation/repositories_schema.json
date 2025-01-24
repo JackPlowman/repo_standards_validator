@@ -31,6 +31,9 @@
             "dependabot_security_updates": {
               "type": "boolean"
             },
+            "code_scanning_alerts": {
+              "type": "integer"
+            },
             "has_security_policy": {
               "type": "boolean"
             },
@@ -57,6 +60,7 @@
             "secret_scanning_push_protection",
             "secret_scanning",
             "dependabot_security_updates",
+            "code_scanning_alerts",
             "has_security_policy",
             "has_code_of_conduct",
             "has_contributing",
