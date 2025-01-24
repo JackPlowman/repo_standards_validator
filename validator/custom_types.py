@@ -15,6 +15,7 @@ class Repository:
     has_security_policy: bool
     has_code_of_conduct: bool
     has_contributing: bool
+    has_readme: bool
 
 
 class AnalysedRepositories(TypedDict):

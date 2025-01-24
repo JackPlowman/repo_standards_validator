@@ -13,6 +13,7 @@ def test_repository() -> None:
         has_security_policy=True,
         has_code_of_conduct=True,
         has_contributing=True,
+        has_readme=True,
     )
     # Assert
     assert repo.name == "test-repo"
@@ -27,6 +28,7 @@ def test_repository() -> None:
     assert repo.has_security_policy is True
     assert repo.has_code_of_conduct is True
     assert repo.has_contributing is True
+    assert repo.has_readme is True
 
 
 def test_analysed_repositories() -> None:
