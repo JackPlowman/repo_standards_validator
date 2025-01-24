@@ -1,4 +1,4 @@
-from ..file import find_file_recursive
+from validator.file import find_file_recursive
 
 
 def test_find_file_recursive() -> None:
