@@ -16,7 +16,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
     Returns:
         AnalysedRepository: The repository with the required settings.
     """
-    repository_dir = f"validator/cloned_repositories/{repository.name}"
+    repository_directory = f"validator/cloned_repositories/{repository.name}"
     logger.info("Checking repository", repository=repository.full_name)
     secret_scanning_push_protection = (
         repository.security_and_analysis.secret_scanning_push_protection.status
@@ -25,9 +25,10 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
     dependabot_security_updates = (
         repository.security_and_analysis.dependabot_security_updates.status
     )
-    has_security_policy = find_file_recursive(repository_dir, "SECURITY.md")
-    has_code_of_conduct = find_file_recursive(repository_dir, "CODE_OF_CONDUCT.md")
-    has_contributing = find_file_recursive(repository_dir, "CONTRIBUTING.md")
+    has_security_policy = find_file_recursive(repository_directory, "SECURITY.md")
+    has_code_of_conduct = find_file_recursive(repository_directory, "CODE_OF_CONDUCT.md")
+    has_contributing = find_file_recursive(repository_directory, "CONTRIBUTING.md")
+    has_readme = find_file_recursive(repository_directory, "README.md")
     logger.debug(
         "Repository details",
         secret_scanning_push_protection=secret_scanning_push_protection,
@@ -36,6 +37,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         has_security_policy=has_security_policy,
         has_code_of_conduct=has_code_of_conduct,
         has_contributing=has_contributing,
+        has_readme=has_readme,
     )
     return AnalysedRepository(
         name=repository.name,
@@ -47,6 +49,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         has_security_policy=has_security_policy,
         has_code_of_conduct=has_code_of_conduct,
         has_contributing=has_contributing,
+        has_readme=has_readme,
     )
 
 
