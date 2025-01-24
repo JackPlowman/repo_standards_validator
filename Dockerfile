@@ -13,6 +13,8 @@ FROM python:3.13-alpine AS validator
 
 WORKDIR /
 
+RUN  apk add --no-cache git=2.47.2-r0
+
 COPY --chmod=755 run.sh run.sh
 COPY validator validator
 
