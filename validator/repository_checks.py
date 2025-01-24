@@ -2,6 +2,7 @@ from github import Repository as GitHubRepositoryType
 from structlog import get_logger, stdlib
 
 from .custom_types import Repository as AnalysedRepository
+from .file import find_file_recursive
 
 logger: stdlib.BoundLogger = get_logger()
 
@@ -23,11 +24,15 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
     dependabot_security_updates = (
         repository.security_and_analysis.dependabot_security_updates.status
     )
+    has_security_policy = find_file_recursive(
+        f"validator/cloned_repositories/{repository.name}", "SECURITY.md"
+    )
     logger.debug(
         "Repository details",
         secret_scanning_push_protection=secret_scanning_push_protection,
         secret_scanning=secret_scanning,
         dependabot_security_updates=dependabot_security_updates,
+        has_security_policy=has_security_policy,
     )
     return AnalysedRepository(
         name=repository.name,
@@ -36,6 +41,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         secret_scanning_push_protection=status_to_bool(secret_scanning_push_protection),
         secret_scanning=status_to_bool(secret_scanning),
         dependabot_security_updates=status_to_bool(dependabot_security_updates),
+        has_security_policy=has_security_policy,
     )
 
 
