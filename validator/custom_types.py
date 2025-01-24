@@ -12,6 +12,7 @@ class Repository:
     secret_scanning_push_protection: bool
     secret_scanning: bool
     dependabot_security_updates: bool
+    has_security_policy: bool
 
 
 class AnalysedRepositories(TypedDict):

@@ -11,11 +11,10 @@ def find_file_recursive(directory: str, filename: str) -> bool:
         filename (str): The name of the file to find
 
     Returns:
-        bool: The path to the file if found, otherwise False
+        bool: True if the file is found, otherwise False
     """
     filename_lower = filename.lower()
-    for _root, _dirs, files in walk(directory):
-        for file in files:
-            if file.lower() == filename_lower:
-                return True
+    for _root, _dir, files in walk(directory):
+        if any(f.lower() == filename_lower for f in files):
+            return True
     return False
