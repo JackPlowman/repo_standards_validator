@@ -78,7 +78,7 @@ ruff-format-fix:
 
 # Check for unused code
 vulture:
-    poetry run vulture validator --ignore-names=owner
+    poetry run vulture validator
 
 # ------------------------------------------------------------------------------
 # Prettier - File Formatting

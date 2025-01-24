@@ -74,3 +74,6 @@ convention = "google"
 
 [tool.ruff.lint.isort]
 known-first-party = ["tests"]
+
+[tool.vulture]
+ignore_names = ["owner", "side_effect"]
