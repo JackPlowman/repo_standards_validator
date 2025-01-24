@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "5368839e-7830-448c-ac31-1999e08b7d74",
-  "timestamp": "2025-01-24T20:44:34+00:00",
+  "uuid": "79559a53-8927-4e03-bcdc-2f5ee9919a6f",
+  "timestamp": "2025-01-24T20:45:02+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -88,13 +88,13 @@
         ]
       },
       "validator/__main__.py": {
-        "checksum": "76d61bb2a8b4ef937440697f56236b32",
+        "checksum": "17f720f2847d92a3c2a0d77763a7e3c1",
         "language": "Python",
         "loc": 29,
         "profile": [7, 22, 0, 0],
         "measurements": [
-          {"unit_name": "main", "start": {"line": 20, "column": 1}, "end": {"line": 41, "column": 15}, "value": 22},
-          {"unit_name": "clean_up", "start": {"line": 44, "column": 1}, "end": {"line": 50, "column": 31}, "value": 7}
+          {"unit_name": "main", "start": {"line": 21, "column": 1}, "end": {"line": 42, "column": 15}, "value": 22},
+          {"unit_name": "clean_up", "start": {"line": 45, "column": 1}, "end": {"line": 51, "column": 31}, "value": 7}
         ]
       },
       "validator/repositories.py": {
