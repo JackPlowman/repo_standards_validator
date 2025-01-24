@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "6c3a1656-8de3-451d-ae50-cbbf032e8070",
-  "timestamp": "2025-01-24T22:13:20+00:00",
+  "uuid": "a642caed-b82b-4512-967b-5715e5a2ce33",
+  "timestamp": "2025-01-24T22:15:05+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -61,7 +61,7 @@
         ]
       },
       "validator/custom_types.py": {
-        "checksum": "64f6763a82340db1c1f1c95d25b98d68",
+        "checksum": "5fee24fcb65e0b703680ff7b2a4576ea",
         "language": "Python",
         "loc": 0,
         "profile": [0, 0, 0, 0],
