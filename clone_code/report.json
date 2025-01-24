@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "daddd22f-7367-4bcc-9f06-9bcf0eb4670e",
-  "timestamp": "2025-01-24T20:14:26+00:00",
+  "uuid": "b093e88d-c13d-415d-be66-3cfee1938079",
+  "timestamp": "2025-01-24T20:25:03+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -11,9 +11,9 @@
   "codebase": {
     "totals": {
       "Python": {
-        "files": 8,
-        "lines_of_code": 86,
-        "functions": 8,
+        "files": 9,
+        "lines_of_code": 101,
+        "functions": 10,
         "hard_to_maintain": 0,
         "unmaintainable": 0
       }
@@ -23,20 +23,21 @@
         "entries": [
           "validator/"
         ],
-        "profile": [43, 43, 0, 0]
+        "profile": [55, 46, 0, 0]
       },
       "validator/": {
         "entries": [
           "action_summary.py",
           "custom_types.py",
           "repository_checks.py",
+          "git_actions.py",
           "configuration.py",
           "__main__.py",
           "repositories.py",
           "__init__.py",
           "custom_logging.py"
         ],
-        "profile": [43, 43, 0, 0]
+        "profile": [55, 46, 0, 0]
       }
     },
     "files": {
@@ -67,6 +68,15 @@
           {"unit_name": "status_to_bool", "start": {"line": 42, "column": 1}, "end": {"line": 44, "column": 31}, "value": 3}
         ]
       },
+      "validator/git_actions.py": {
+        "checksum": "53dc335d69908d6e01bb841d80cdcdec",
+        "language": "Python",
+        "loc": 5,
+        "profile": [5, 0, 0, 0],
+        "measurements": [
+          {"unit_name": "clone_repository", "start": {"line": 4, "column": 1}, "end": {"line": 13, "column": 6}, "value": 5}
+        ]
+      },
       "validator/configuration.py": {
         "checksum": "5bc03b4a026d175674df34f7fb66a080",
         "language": "Python",
@@ -78,12 +88,13 @@
         ]
       },
       "validator/__main__.py": {
-        "checksum": "1a03e014387536bfde9ec23dec926ed0",
+        "checksum": "76d61bb2a8b4ef937440697f56236b32",
         "language": "Python",
-        "loc": 19,
-        "profile": [0, 19, 0, 0],
+        "loc": 29,
+        "profile": [7, 22, 0, 0],
         "measurements": [
-          {"unit_name": "main", "start": {"line": 19, "column": 1}, "end": {"line": 37, "column": 6}, "value": 19}
+          {"unit_name": "main", "start": {"line": 20, "column": 1}, "end": {"line": 41, "column": 15}, "value": 22},
+          {"unit_name": "clean_up", "start": {"line": 44, "column": 1}, "end": {"line": 50, "column": 31}, "value": 7}
         ]
       },
       "validator/repositories.py": {
