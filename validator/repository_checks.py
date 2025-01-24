@@ -27,6 +27,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
     )
     has_security_policy = find_file_recursive(repository_dir, "SECURITY.md")
     has_code_of_conduct = find_file_recursive(repository_dir, "CODE_OF_CONDUCT.md")
+    has_contributing = find_file_recursive(repository_dir, "CONTRIBUTING.md")
     logger.debug(
         "Repository details",
         secret_scanning_push_protection=secret_scanning_push_protection,
@@ -34,6 +35,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         dependabot_security_updates=dependabot_security_updates,
         has_security_policy=has_security_policy,
         has_code_of_conduct=has_code_of_conduct,
+        has_contributing=has_contributing,
     )
     return AnalysedRepository(
         name=repository.name,
@@ -44,6 +46,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         dependabot_security_updates=status_to_bool(dependabot_security_updates),
         has_security_policy=has_security_policy,
         has_code_of_conduct=has_code_of_conduct,
+        has_contributing=has_contributing,
     )
 
 

@@ -14,6 +14,7 @@ class Repository:
     dependabot_security_updates: bool
     has_security_policy: bool
     has_code_of_conduct: bool
+    has_contributing: bool
 
 
 class AnalysedRepositories(TypedDict):
