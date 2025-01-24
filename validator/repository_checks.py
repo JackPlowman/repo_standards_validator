@@ -34,6 +34,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
     has_project_technologies = find_file_recursive(
         repository_directory, "PROJECT_TECHNOLOGIES.md"
     )
+    has_license = find_file_recursive(repository_directory, "LICENSE")
     logger.debug(
         "Repository details",
         secret_scanning_push_protection=secret_scanning_push_protection,
@@ -44,6 +45,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         has_contributing=has_contributing,
         has_readme=has_readme,
         has_project_technologies=has_project_technologies,
+        has_license=has_license,
     )
     return AnalysedRepository(
         name=repository.name,
@@ -57,6 +59,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         has_contributing=has_contributing,
         has_readme=has_readme,
         has_project_technologies=has_project_technologies,
+        has_license=has_license,
     )
 
 
