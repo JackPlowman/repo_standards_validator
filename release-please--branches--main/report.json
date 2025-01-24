@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "af771583-4481-4a14-80f2-5eba8a192d56",
-  "timestamp": "2025-01-24T22:10:30+00:00",
+  "uuid": "7ced9eba-ed60-4efd-b111-6bdc04bed479",
+  "timestamp": "2025-01-24T22:17:38+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -12,7 +12,7 @@
     "totals": {
       "Python": {
         "files": 10,
-        "lines_of_code": 123,
+        "lines_of_code": 128,
         "functions": 11,
         "hard_to_maintain": 1,
         "unmaintainable": 0
@@ -23,7 +23,7 @@
         "entries": [
           "validator/"
         ],
-        "profile": [62, 22, 39, 0]
+        "profile": [62, 22, 44, 0]
       },
       "validator/": {
         "entries": [
@@ -38,7 +38,7 @@
           "__init__.py",
           "custom_logging.py"
         ],
-        "profile": [62, 22, 39, 0]
+        "profile": [62, 22, 44, 0]
       }
     },
     "files": {
@@ -61,7 +61,7 @@
         ]
       },
       "validator/custom_types.py": {
-        "checksum": "64f6763a82340db1c1f1c95d25b98d68",
+        "checksum": "5fee24fcb65e0b703680ff7b2a4576ea",
         "language": "Python",
         "loc": 0,
         "profile": [0, 0, 0, 0],
@@ -69,13 +69,13 @@
         ]
       },
       "validator/repository_checks.py": {
-        "checksum": "0d0be5a23b78345829cfc59348f5c809",
+        "checksum": "dde1dbc165cf5a26edab58039a9fb77e",
         "language": "Python",
-        "loc": 42,
-        "profile": [3, 0, 39, 0],
+        "loc": 47,
+        "profile": [3, 0, 44, 0],
         "measurements": [
-          {"unit_name": "check_repository", "start": {"line": 10, "column": 1}, "end": {"line": 55, "column": 6}, "value": 39},
-          {"unit_name": "status_to_bool", "start": {"line": 58, "column": 1}, "end": {"line": 60, "column": 31}, "value": 3}
+          {"unit_name": "check_repository", "start": {"line": 10, "column": 1}, "end": {"line": 60, "column": 6}, "value": 44},
+          {"unit_name": "status_to_bool", "start": {"line": 63, "column": 1}, "end": {"line": 65, "column": 31}, "value": 3}
         ]
       },
       "validator/git_actions.py": {
