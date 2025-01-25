@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "bd4a01fd-0e6c-4454-83e8-0c5722e86c14",
-  "timestamp": "2025-01-24T23:08:37+00:00",
+  "uuid": "c779b036-ab8e-4336-9cf1-378bb7267fe0",
+  "timestamp": "2025-01-25T10:24:54+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -12,8 +12,8 @@
     "totals": {
       "Python": {
         "files": 10,
-        "lines_of_code": 147,
-        "functions": 12,
+        "lines_of_code": 158,
+        "functions": 13,
         "hard_to_maintain": 1,
         "unmaintainable": 0
       }
@@ -23,7 +23,7 @@
         "entries": [
           "validator/"
         ],
-        "profile": [75, 22, 50, 0]
+        "profile": [88, 22, 48, 0]
       },
       "validator/": {
         "entries": [
@@ -38,7 +38,7 @@
           "__init__.py",
           "custom_logging.py"
         ],
-        "profile": [75, 22, 50, 0]
+        "profile": [88, 22, 48, 0]
       }
     },
     "files": {
@@ -52,12 +52,13 @@
         ]
       },
       "validator/file.py": {
-        "checksum": "489d5d3ac5eef159148b9d7cb8f7ca68",
+        "checksum": "c25b38c0ed8dffa6503fc784a1f11299",
         "language": "Python",
-        "loc": 7,
-        "profile": [7, 0, 0, 0],
+        "loc": 20,
+        "profile": [20, 0, 0, 0],
         "measurements": [
-          {"unit_name": "find_file_recursive", "start": {"line": 4, "column": 1}, "end": {"line": 20, "column": 17}, "value": 7}
+          {"unit_name": "find_file", "start": {"line": 6, "column": 1}, "end": {"line": 26, "column": 17}, "value": 13},
+          {"unit_name": "search_for_file", "start": {"line": 29, "column": 1}, "end": {"line": 45, "column": 17}, "value": 7}
         ]
       },
       "validator/custom_types.py": {
@@ -69,14 +70,14 @@
         ]
       },
       "validator/repository_checks.py": {
-        "checksum": "92bdba9eaf257deaa9e04c1f8ece97d3",
+        "checksum": "3b9926dc23f259d95296eaaafcdf2bb9",
         "language": "Python",
-        "loc": 66,
-        "profile": [16, 0, 50, 0],
+        "loc": 64,
+        "profile": [16, 0, 48, 0],
         "measurements": [
-          {"unit_name": "check_repository", "start": {"line": 10, "column": 1}, "end": {"line": 68, "column": 6}, "value": 50},
-          {"unit_name": "status_to_bool", "start": {"line": 71, "column": 1}, "end": {"line": 73, "column": 31}, "value": 3},
-          {"unit_name": "get_code_scanning_alerts", "start": {"line": 76, "column": 1}, "end": {"line": 96, "column": 17}, "value": 13}
+          {"unit_name": "check_repository", "start": {"line": 10, "column": 1}, "end": {"line": 66, "column": 6}, "value": 48},
+          {"unit_name": "status_to_bool", "start": {"line": 69, "column": 1}, "end": {"line": 71, "column": 31}, "value": 3},
+          {"unit_name": "get_code_scanning_alerts", "start": {"line": 74, "column": 1}, "end": {"line": 94, "column": 17}, "value": 13}
         ]
       },
       "validator/git_actions.py": {
