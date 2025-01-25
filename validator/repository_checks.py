@@ -25,6 +25,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
     dependabot_security_updates = (
         repository.security_and_analysis.dependabot_security_updates.status
     )
+    private_vulnerability_disclosures = repository.get_vulnerability_alert()
     code_scanning_alerts = get_code_scanning_alerts(repository)
     has_security_policy = find_file(repository_directory, "SECURITY.md")
     has_code_of_conduct = find_file(repository_directory, "CODE_OF_CONDUCT.md")
@@ -40,6 +41,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         secret_scanning_push_protection=secret_scanning_push_protection,
         secret_scanning=secret_scanning,
         dependabot_security_updates=dependabot_security_updates,
+        private_vulnerability_disclosures=private_vulnerability_disclosures,
         code_scanning_alerts=code_scanning_alerts,
         has_security_policy=has_security_policy,
         has_code_of_conduct=has_code_of_conduct,
@@ -56,6 +58,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         secret_scanning_push_protection=status_to_bool(secret_scanning_push_protection),
         secret_scanning=status_to_bool(secret_scanning),
         dependabot_security_updates=status_to_bool(dependabot_security_updates),
+        private_vulnerability_disclosures=private_vulnerability_disclosures,
         code_scanning_alerts=code_scanning_alerts,
         has_security_policy=has_security_policy,
         has_code_of_conduct=has_code_of_conduct,

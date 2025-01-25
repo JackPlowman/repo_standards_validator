@@ -31,6 +31,9 @@
             "dependabot_security_updates": {
               "type": "boolean"
             },
+            "private_vulnerability_disclosures": {
+              "type": "boolean"
+            },
             "code_scanning_alerts": {
               "type": "integer"
             },
