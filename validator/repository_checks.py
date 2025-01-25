@@ -41,6 +41,7 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         secret_scanning_push_protection=secret_scanning_push_protection,
         secret_scanning=secret_scanning,
         dependabot_security_updates=dependabot_security_updates,
+        private_vulnerability_disclosures=private_vulnerability_disclosures,
         code_scanning_alerts=code_scanning_alerts,
         has_security_policy=has_security_policy,
         has_code_of_conduct=has_code_of_conduct,
@@ -48,7 +49,6 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         has_readme=has_readme,
         has_project_technologies=has_project_technologies,
         has_license=has_license,
-        private_vulnerability_disclosures=private_vulnerability_disclosures,
     )
 
     return AnalysedRepository(
