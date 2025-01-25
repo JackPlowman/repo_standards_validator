@@ -2,7 +2,7 @@ from github import Repository as GitHubRepositoryType
 from structlog import get_logger, stdlib
 
 from .custom_types import Repository as AnalysedRepository
-from .file import find_file_recursive
+from .file import find_file
 
 logger: stdlib.BoundLogger = get_logger()
 
@@ -26,16 +26,14 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         repository.security_and_analysis.dependabot_security_updates.status
     )
     code_scanning_alerts = get_code_scanning_alerts(repository)
-    has_security_policy = find_file_recursive(repository_directory, "SECURITY.md")
-    has_code_of_conduct = find_file_recursive(
-        repository_directory, "CODE_OF_CONDUCT.md"
-    )
-    has_contributing = find_file_recursive(repository_directory, "CONTRIBUTING.md")
-    has_readme = find_file_recursive(repository_directory, "README.md")
-    has_project_technologies = find_file_recursive(
+    has_security_policy = find_file(repository_directory, "SECURITY.md")
+    has_code_of_conduct = find_file(repository_directory, "CODE_OF_CONDUCT.md")
+    has_contributing = find_file(repository_directory, "CONTRIBUTING.md")
+    has_readme = find_file(repository_directory, "README.md")
+    has_project_technologies = find_file(
         repository_directory, "PROJECT_TECHNOLOGIES.md"
     )
-    has_license = find_file_recursive(repository_directory, "LICENSE")
+    has_license = find_file(repository_directory, "LICENSE")
 
     logger.debug(
         "Repository details",
