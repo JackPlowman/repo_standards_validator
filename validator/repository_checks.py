@@ -61,9 +61,9 @@ def check_repository_security_details(
     private_vulnerability_disclosures = repository.get_vulnerability_alert()
     code_scanning_alerts = get_code_scanning_alerts(repository)
     return RepositorySecurityDetails(
-        secret_scanning_push_protection=secret_scanning_push_protection,
-        secret_scanning=secret_scanning,
-        dependabot_security_updates=dependabot_security_updates,
+        secret_scanning_push_protection=status_to_bool(secret_scanning_push_protection),
+        secret_scanning=status_to_bool(secret_scanning),
+        dependabot_security_updates=status_to_bool(dependabot_security_updates),
         private_vulnerability_disclosures=private_vulnerability_disclosures,
         code_scanning_alerts=code_scanning_alerts,
     )
