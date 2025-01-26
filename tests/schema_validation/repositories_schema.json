@@ -22,54 +22,73 @@
             "repository_link": {
               "type": "string"
             },
-            "secret_scanning_push_protection": {
-              "type": "boolean"
+            "repository_security_details": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "secret_scanning_push_protection": {
+                  "type": "boolean"
+                },
+                "secret_scanning": {
+                  "type": "boolean"
+                },
+                "dependabot_security_updates": {
+                  "type": "boolean"
+                },
+                "private_vulnerability_disclosures": {
+                  "type": "boolean"
+                },
+                "code_scanning_alerts": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "secret_scanning_push_protection",
+                "secret_scanning",
+                "dependabot_security_updates",
+                "private_vulnerability_disclosures",
+                "code_scanning_alerts"
+              ]
             },
-            "secret_scanning": {
-              "type": "boolean"
-            },
-            "dependabot_security_updates": {
-              "type": "boolean"
-            },
-            "private_vulnerability_disclosures": {
-              "type": "boolean"
-            },
-            "code_scanning_alerts": {
-              "type": "integer"
-            },
-            "has_security_policy": {
-              "type": "boolean"
-            },
-            "has_code_of_conduct": {
-              "type": "boolean"
-            },
-            "has_contributing": {
-              "type": "boolean"
-            },
-            "has_readme": {
-              "type": "boolean"
-            },
-            "has_project_technologies": {
-              "type": "boolean"
-            },
-            "has_license": {
-              "type": "boolean"
+            "repository_has_files": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "has_security_policy": {
+                  "type": "boolean"
+                },
+                "has_code_of_conduct": {
+                  "type": "boolean"
+                },
+                "has_contributing": {
+                  "type": "boolean"
+                },
+                "has_readme": {
+                  "type": "boolean"
+                },
+                "has_project_technologies": {
+                  "type": "boolean"
+                },
+                "has_license": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "has_security_policy",
+                "has_code_of_conduct",
+                "has_contributing",
+                "has_readme",
+                "has_project_technologies",
+                "has_license"
+              ]
             }
           },
           "required": [
             "name",
             "full_name",
             "repository_link",
-            "secret_scanning_push_protection",
-            "secret_scanning",
-            "dependabot_security_updates",
-            "code_scanning_alerts",
-            "has_security_policy",
-            "has_code_of_conduct",
-            "has_contributing",
-            "has_readme",
-            "has_project_technologies",
-            "has_license"
+            "repository_security_details",
+            "repository_has_files"
           ]
         }
       ]
