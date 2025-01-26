@@ -1,5 +1,10 @@
-from validator.custom_types import AnalysedRepositories, Repository
-from validator.custom_types import RepositoryHasFiles, RepositorySecurityDetails
+from validator.custom_types import (
+    AnalysedRepositories,
+    Repository,
+    RepositoryHasFiles,
+    RepositorySecurityDetails,
+)
+
 
 def test_repository() -> None:
     # Act
