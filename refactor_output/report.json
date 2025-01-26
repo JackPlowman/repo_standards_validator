@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "5f406891-5400-4952-93bb-60f9902eeadc",
-  "timestamp": "2025-01-26T21:05:57+00:00",
+  "uuid": "53b0c2f7-a0ed-48c2-b73f-41855048f68e",
+  "timestamp": "2025-01-26T21:06:30+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -12,7 +12,7 @@
     "totals": {
       "Python": {
         "files": 10,
-        "lines_of_code": 171,
+        "lines_of_code": 169,
         "functions": 15,
         "hard_to_maintain": 0,
         "unmaintainable": 0
@@ -23,7 +23,7 @@
         "entries": [
           "validator/"
         ],
-        "profile": [88, 83, 0, 0]
+        "profile": [88, 81, 0, 0]
       },
       "validator/": {
         "entries": [
@@ -38,7 +38,7 @@
           "__init__.py",
           "custom_logging.py"
         ],
-        "profile": [88, 83, 0, 0]
+        "profile": [88, 81, 0, 0]
       }
     },
     "files": {
@@ -70,16 +70,16 @@
         ]
       },
       "validator/repository_checks.py": {
-        "checksum": "d1f89625e37537331618b3674f868c01",
+        "checksum": "eef6aa97ca645203e4e84a6e308d7840",
         "language": "Python",
-        "loc": 77,
-        "profile": [16, 61, 0, 0],
+        "loc": 75,
+        "profile": [16, 59, 0, 0],
         "measurements": [
           {"unit_name": "check_repository", "start": {"line": 11, "column": 1}, "end": {"line": 35, "column": 6}, "value": 18},
           {"unit_name": "status_to_bool", "start": {"line": 38, "column": 1}, "end": {"line": 40, "column": 31}, "value": 3},
           {"unit_name": "check_repository_security_details", "start": {"line": 43, "column": 1}, "end": {"line": 69, "column": 6}, "value": 20},
-          {"unit_name": "check_repository_has_key_files", "start": {"line": 72, "column": 1}, "end": {"line": 101, "column": 6}, "value": 23},
-          {"unit_name": "get_code_scanning_alerts", "start": {"line": 104, "column": 1}, "end": {"line": 124, "column": 17}, "value": 13}
+          {"unit_name": "check_repository_has_key_files", "start": {"line": 72, "column": 1}, "end": {"line": 99, "column": 6}, "value": 21},
+          {"unit_name": "get_code_scanning_alerts", "start": {"line": 102, "column": 1}, "end": {"line": 122, "column": 17}, "value": 13}
         ]
       },
       "validator/git_actions.py": {
