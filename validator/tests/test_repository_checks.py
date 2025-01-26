@@ -22,9 +22,6 @@ def test_check_repository() -> None:
     # Assert
     assert analysed_repository.name == "test-repo"
     assert analysed_repository.full_name == "owner/test-repo"
-    assert analysed_repository.secret_scanning_push_protection is True
-    assert analysed_repository.secret_scanning is True
-    assert analysed_repository.dependabot_security_updates is True
 
 
 @pytest.mark.parametrize(

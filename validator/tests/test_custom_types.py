@@ -1,5 +1,5 @@
 from validator.custom_types import AnalysedRepositories, Repository
-
+from validator.custom_types import RepositoryHasFiles, RepositorySecurityDetails
 
 def test_repository() -> None:
     # Act
@@ -7,17 +7,21 @@ def test_repository() -> None:
         name="test-repo",
         full_name="owner/test-repo",
         repository_link="https://github.com/JackPlowman/repo_standards_validator",
-        secret_scanning_push_protection=True,
-        secret_scanning=True,
-        dependabot_security_updates=True,
-        private_vulnerability_disclosures=True,
-        code_scanning_alerts=5,
-        has_security_policy=True,
-        has_code_of_conduct=True,
-        has_contributing=True,
-        has_readme=True,
-        has_project_technologies=True,
-        has_license=True,
+        repository_security_details=RepositorySecurityDetails(
+            secret_scanning_push_protection=True,
+            secret_scanning=True,
+            dependabot_security_updates=True,
+            private_vulnerability_disclosures=True,
+            code_scanning_alerts=5,
+        ),
+        repository_has_files=RepositoryHasFiles(
+            has_security_policy=True,
+            has_code_of_conduct=True,
+            has_contributing=True,
+            has_readme=True,
+            has_project_technologies=True,
+            has_license=True,
+        ),
     )
     # Assert
     assert repo.name == "test-repo"
@@ -26,17 +30,21 @@ def test_repository() -> None:
         repo.repository_link
         == "https://github.com/JackPlowman/repo_standards_validator"
     )
-    assert repo.secret_scanning_push_protection is True
-    assert repo.secret_scanning is True
-    assert repo.dependabot_security_updates is True
-    assert repo.private_vulnerability_disclosures is True
-    assert repo.code_scanning_alerts == 5
-    assert repo.has_security_policy is True
-    assert repo.has_code_of_conduct is True
-    assert repo.has_contributing is True
-    assert repo.has_readme is True
-    assert repo.has_project_technologies is True
-    assert repo.has_license is True
+    assert repo.repository_security_details == RepositorySecurityDetails(
+        secret_scanning_push_protection=True,
+        secret_scanning=True,
+        dependabot_security_updates=True,
+        private_vulnerability_disclosures=True,
+        code_scanning_alerts=5,
+    )
+    assert repo.repository_has_files == RepositoryHasFiles(
+        has_security_policy=True,
+        has_code_of_conduct=True,
+        has_contributing=True,
+        has_readme=True,
+        has_project_technologies=True,
+        has_license=True,
+    )
 
 
 def test_analysed_repositories() -> None:

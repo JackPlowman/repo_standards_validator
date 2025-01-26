@@ -3,23 +3,37 @@ from typing import TypedDict
 
 
 @dataclass
-class Repository:
-    """A representation of a GitHub repository."""
+class RepositorySecurityDetails:
+    """A representation of a GitHub repository's security details."""
 
-    name: str
-    full_name: str
-    repository_link: str
     secret_scanning_push_protection: bool
     secret_scanning: bool
     dependabot_security_updates: bool
     private_vulnerability_disclosures: bool
     code_scanning_alerts: int
+
+
+@dataclass
+class RepositoryHasFiles:
+    """A representation of a GitHub repository's key files."""
+
     has_security_policy: bool
     has_code_of_conduct: bool
     has_contributing: bool
     has_readme: bool
     has_project_technologies: bool
     has_license: bool
+
+
+@dataclass
+class Repository:
+    """A representation of a GitHub repository."""
+
+    name: str
+    full_name: str
+    repository_link: str
+    repository_security_details: RepositorySecurityDetails
+    repository_has_files: RepositoryHasFiles
 
 
 class AnalysedRepositories(TypedDict):
