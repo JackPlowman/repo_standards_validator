@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "89f7c6f5-4db2-430a-a1e6-6a179c889911",
-  "timestamp": "2025-01-26T21:00:36+00:00",
+  "uuid": "9e4c7ee4-6ced-45b4-842c-ab94919fc98b",
+  "timestamp": "2025-01-26T21:02:34+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -12,9 +12,9 @@
     "totals": {
       "Python": {
         "files": 10,
-        "lines_of_code": 183,
+        "lines_of_code": 171,
         "functions": 15,
-        "hard_to_maintain": 1,
+        "hard_to_maintain": 0,
         "unmaintainable": 0
       }
     },
@@ -23,7 +23,7 @@
         "entries": [
           "validator/"
         ],
-        "profile": [100, 50, 33, 0]
+        "profile": [88, 83, 0, 0]
       },
       "validator/": {
         "entries": [
@@ -38,7 +38,7 @@
           "__init__.py",
           "custom_logging.py"
         ],
-        "profile": [100, 50, 33, 0]
+        "profile": [88, 83, 0, 0]
       }
     },
     "files": {
@@ -70,16 +70,16 @@
         ]
       },
       "validator/repository_checks.py": {
-        "checksum": "f6dfc7abcd357a7f2b73437398d3d19b",
+        "checksum": "d1f89625e37537331618b3674f868c01",
         "language": "Python",
-        "loc": 89,
-        "profile": [28, 28, 33, 0],
+        "loc": 77,
+        "profile": [16, 61, 0, 0],
         "measurements": [
-          {"unit_name": "check_repository", "start": {"line": 11, "column": 1}, "end": {"line": 29, "column": 6}, "value": 12},
-          {"unit_name": "status_to_bool", "start": {"line": 32, "column": 1}, "end": {"line": 34, "column": 31}, "value": 3},
-          {"unit_name": "check_repository_security_details", "start": {"line": 37, "column": 1}, "end": {"line": 72, "column": 6}, "value": 28},
-          {"unit_name": "check_repository_has_key_files", "start": {"line": 75, "column": 1}, "end": {"line": 114, "column": 6}, "value": 33},
-          {"unit_name": "get_code_scanning_alerts", "start": {"line": 117, "column": 1}, "end": {"line": 137, "column": 17}, "value": 13}
+          {"unit_name": "check_repository", "start": {"line": 11, "column": 1}, "end": {"line": 35, "column": 6}, "value": 18},
+          {"unit_name": "status_to_bool", "start": {"line": 38, "column": 1}, "end": {"line": 40, "column": 31}, "value": 3},
+          {"unit_name": "check_repository_security_details", "start": {"line": 43, "column": 1}, "end": {"line": 69, "column": 6}, "value": 20},
+          {"unit_name": "check_repository_has_key_files", "start": {"line": 72, "column": 1}, "end": {"line": 101, "column": 6}, "value": 23},
+          {"unit_name": "get_code_scanning_alerts", "start": {"line": 104, "column": 1}, "end": {"line": 124, "column": 17}, "value": 13}
         ]
       },
       "validator/git_actions.py": {
