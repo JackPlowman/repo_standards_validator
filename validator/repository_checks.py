@@ -18,8 +18,14 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         AnalysedRepository: The repository with the required settings.
     """
     logger.info("Checking repository", repository=repository.full_name)
-    repository_has_files = check_repository_has_key_files(repository)
     repository_security_details = check_repository_security_details(repository)
+    repository_has_files = check_repository_has_key_files(repository)
+    logger.debug(
+        "Repository checked",
+        repository=repository.full_name,
+        repository_security_details=repository_security_details,
+        repository_has_files=repository_has_files,
+    )
     return AnalysedRepository(
         name=repository.name,
         full_name=repository.full_name,
@@ -54,15 +60,6 @@ def check_repository_security_details(
     )
     private_vulnerability_disclosures = repository.get_vulnerability_alert()
     code_scanning_alerts = get_code_scanning_alerts(repository)
-
-    logger.debug(
-        "Repository security details",
-        secret_scanning_push_protection=secret_scanning_push_protection,
-        secret_scanning=secret_scanning,
-        dependabot_security_updates=dependabot_security_updates,
-        private_vulnerability_disclosures=private_vulnerability_disclosures,
-        code_scanning_alerts=code_scanning_alerts,
-    )
     return RepositorySecurityDetails(
         secret_scanning_push_protection=secret_scanning_push_protection,
         secret_scanning=secret_scanning,
@@ -92,16 +89,6 @@ def check_repository_has_key_files(
         repository_directory, "PROJECT_TECHNOLOGIES.md"
     )
     has_license = find_file(repository_directory, "LICENSE")
-    logger.debug(
-        "Repository key files",
-        repository=repository.full_name,
-        has_security_policy=has_security_policy,
-        has_code_of_conduct=has_code_of_conduct,
-        has_contributing=has_contributing,
-        has_readme=has_readme,
-        has_project_technologies=has_project_technologies,
-        has_license=has_license,
-    )
     return (
         RepositoryHasFiles(
             has_security_policy=has_security_policy,
