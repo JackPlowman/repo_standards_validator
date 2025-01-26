@@ -89,15 +89,13 @@ def check_repository_has_key_files(
         repository_directory, "PROJECT_TECHNOLOGIES.md"
     )
     has_license = find_file(repository_directory, "LICENSE")
-    return (
-        RepositoryHasFiles(
-            has_security_policy=has_security_policy,
-            has_code_of_conduct=has_code_of_conduct,
-            has_contributing=has_contributing,
-            has_readme=has_readme,
-            has_project_technologies=has_project_technologies,
-            has_license=has_license,
-        ),
+    return RepositoryHasFiles(
+        has_security_policy=has_security_policy,
+        has_code_of_conduct=has_code_of_conduct,
+        has_contributing=has_contributing,
+        has_readme=has_readme,
+        has_project_technologies=has_project_technologies,
+        has_license=has_license,
     )
 
 
