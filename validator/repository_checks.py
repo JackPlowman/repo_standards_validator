@@ -51,8 +51,7 @@ def check_repository_details(repository: GitHubRepositoryType) -> RepositoryDeta
     """Check the repository for the required details.
 
     Args:
-        repository (p): The repository to check.
-
+        repository (GitHubRepositoryType): The repository to check.
     Returns:
         RepositoryDetails: The repository with the required details.
     """
