@@ -22,6 +22,19 @@
             "repository_link": {
               "type": "string"
             },
+            "repository_details": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "open_issues": {
+                  "type": "integer"
+                },
+                "open_pull_requests": {
+                  "type": "integer"
+                }
+              },
+              "required": ["open_issues", "open_pull_requests"]
+            },
             "repository_security_details": {
               "type": "object",
               "additionalProperties": false,
@@ -50,7 +63,7 @@
                 "code_scanning_alerts"
               ]
             },
-            "repository_has_files": {
+            "repository_key_files": {
               "type": "object",
               "additionalProperties": false,
               "properties": {
@@ -87,8 +100,9 @@
             "name",
             "full_name",
             "repository_link",
+            "repository_details",
             "repository_security_details",
-            "repository_has_files"
+            "repository_key_files"
           ]
         }
       ]
