@@ -4,7 +4,7 @@ from structlog import get_logger, stdlib
 from .custom_types import Repository as AnalysedRepository
 from .custom_types import (
     RepositoryDetails,
-    RepositoryHasFiles,
+    RepositoryKeyFiles,
     RepositorySecurityDetails,
 )
 from .file import find_file
@@ -98,14 +98,14 @@ def check_repository_security_details(
 
 def check_repository_has_key_files(
     repository: GitHubRepositoryType,
-) -> RepositoryHasFiles:
+) -> RepositoryKeyFiles:
     """Check if the repository has the required key files.
 
     Args:
         repository (GitHubRepositoryType): The repository to check.
 
     Returns:
-        RepositoryHasFiles: The repository with the required files.
+        RepositoryKeyFiles: The repository with the required files.
     """
     repository_directory = f"validator/cloned_repositories/{repository.name}"
     has_security_policy = find_file(repository_directory, "SECURITY.md")
@@ -116,7 +116,7 @@ def check_repository_has_key_files(
         repository_directory, "PROJECT_TECHNOLOGIES.md"
     )
     has_license = find_file(repository_directory, "LICENSE")
-    return RepositoryHasFiles(
+    return RepositoryKeyFiles(
         has_security_policy=has_security_policy,
         has_code_of_conduct=has_code_of_conduct,
         has_contributing=has_contributing,

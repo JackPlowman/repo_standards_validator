@@ -14,7 +14,7 @@ class RepositorySecurityDetails:
 
 
 @dataclass
-class RepositoryHasFiles:
+class RepositoryKeyFiles:
     """A representation of a GitHub repository's key files."""
 
     has_security_policy: bool
@@ -42,7 +42,7 @@ class Repository:
     repository_link: str
     repository_details: RepositoryDetails
     repository_security_details: RepositorySecurityDetails
-    repository_key_files: RepositoryHasFiles
+    repository_key_files: RepositoryKeyFiles
 
 
 class AnalysedRepositories(TypedDict):
