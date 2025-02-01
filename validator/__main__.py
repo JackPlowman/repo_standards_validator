@@ -25,10 +25,16 @@ def main() -> None:
     configuration = Configuration()
     repositories = retrieve_repositories(configuration)
     raw_analysed_repositories = []
-    for repository in repositories:
+    total_repositories = repositories.totalCount
+    for index, repository in enumerate(repositories, 1):
         clone_repository(repository.name, repository.clone_url)
         analysed_repository = check_repository(repository)
         raw_analysed_repositories.append(asdict(analysed_repository))
+        logger.info(
+            "Repository analysed",
+            repository=analysed_repository.full_name,
+            percentage_complete=f"{int(index / total_repositories * 100)}%",
+        )
     analysed_repositories = AnalysedRepositories(
         owner=configuration.repository_owner, repositories=raw_analysed_repositories
     )
