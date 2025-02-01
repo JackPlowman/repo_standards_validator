@@ -26,14 +26,23 @@ class RepositoryHasFiles:
 
 
 @dataclass
+class RepositoryDetails:
+    """A representation of a GitHub repository's details."""
+
+    pull_requests: int
+    issues: int
+
+
+@dataclass
 class Repository:
     """A representation of a GitHub repository."""
 
     name: str
     full_name: str
     repository_link: str
+    repository_details: RepositoryDetails
     repository_security_details: RepositorySecurityDetails
-    repository_has_files: RepositoryHasFiles
+    repository_key_files: RepositoryHasFiles
 
 
 class AnalysedRepositories(TypedDict):

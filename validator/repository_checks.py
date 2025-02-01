@@ -2,7 +2,11 @@ from github import Repository as GitHubRepositoryType
 from structlog import get_logger, stdlib
 
 from .custom_types import Repository as AnalysedRepository
-from .custom_types import RepositoryHasFiles, RepositorySecurityDetails
+from .custom_types import (
+    RepositoryDetails,
+    RepositoryHasFiles,
+    RepositorySecurityDetails,
+)
 from .file import find_file
 
 logger: stdlib.BoundLogger = get_logger()
@@ -18,26 +22,43 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         AnalysedRepository: The repository with the required settings.
     """
     logger.info("Checking repository", repository=repository.full_name)
+    repository_details = check_repository_details(repository)
     repository_security_details = check_repository_security_details(repository)
-    repository_has_files = check_repository_has_key_files(repository)
+    repository_key_files = check_repository_has_key_files(repository)
     logger.debug(
         "Repository checked",
         repository=repository.full_name,
+        repository_details=repository_details,
         repository_security_details=repository_security_details,
-        repository_has_files=repository_has_files,
+        repository_key_files=repository_key_files,
     )
     return AnalysedRepository(
         name=repository.name,
         full_name=repository.full_name,
         repository_link=repository.html_url,
+        repository_details=repository_details,
         repository_security_details=repository_security_details,
-        repository_has_files=repository_has_files,
+        repository_key_files=repository_key_files,
     )
 
 
 def status_to_bool(status: str) -> bool:
     """Convert a status string to a boolean."""
     return status == "enabled"
+
+
+def check_repository_details(repository: GitHubRepositoryType) -> RepositoryDetails:
+    """Check the repository for the required details.
+
+    Args:
+        repository (p): The repository to check.
+
+    Returns:
+        RepositoryDetails: The repository with the required details.
+    """
+    pull_requests = repository.get_pulls().totalCount
+    issues = repository.get_issues().totalCount
+    return RepositoryDetails(pull_requests=pull_requests, issues=issues)
 
 
 def check_repository_security_details(
