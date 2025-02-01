@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "896f8b2e-2ef1-44e4-a2c9-8e398dbb5f3f",
-  "timestamp": "2025-02-01T16:47:45+00:00",
+  "uuid": "702a6739-354e-42f4-94fa-a93b1f763513",
+  "timestamp": "2025-02-01T16:48:48+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -70,17 +70,17 @@
         ]
       },
       "validator/repository_checks.py": {
-        "checksum": "87b117f6952d33c50ab1c2d43bebe475",
+        "checksum": "87304081a21e991a10bf2e927b47094e",
         "language": "Python",
         "loc": 89,
         "profile": [27, 62, 0, 0],
         "measurements": [
           {"unit_name": "check_repository", "start": {"line": 15, "column": 1}, "end": {"line": 42, "column": 6}, "value": 21},
           {"unit_name": "status_to_bool", "start": {"line": 45, "column": 1}, "end": {"line": 47, "column": 31}, "value": 3},
-          {"unit_name": "check_repository_details", "start": {"line": 50, "column": 1}, "end": {"line": 67, "column": 6}, "value": 11},
-          {"unit_name": "check_repository_security_details", "start": {"line": 70, "column": 1}, "end": {"line": 96, "column": 6}, "value": 20},
-          {"unit_name": "check_repository_has_key_files", "start": {"line": 99, "column": 1}, "end": {"line": 126, "column": 6}, "value": 21},
-          {"unit_name": "get_code_scanning_alerts", "start": {"line": 129, "column": 1}, "end": {"line": 149, "column": 17}, "value": 13}
+          {"unit_name": "check_repository_details", "start": {"line": 50, "column": 1}, "end": {"line": 66, "column": 6}, "value": 11},
+          {"unit_name": "check_repository_security_details", "start": {"line": 69, "column": 1}, "end": {"line": 95, "column": 6}, "value": 20},
+          {"unit_name": "check_repository_has_key_files", "start": {"line": 98, "column": 1}, "end": {"line": 125, "column": 6}, "value": 21},
+          {"unit_name": "get_code_scanning_alerts", "start": {"line": 128, "column": 1}, "end": {"line": 148, "column": 17}, "value": 13}
         ]
       },
       "validator/git_actions.py": {
