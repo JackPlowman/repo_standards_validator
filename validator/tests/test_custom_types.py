@@ -1,9 +1,9 @@
 from validator.custom_types import (
     AnalysedRepositories,
     Repository,
+    RepositoryDetails,
     RepositoryKeyFiles,
     RepositorySecurityDetails,
-    RepositoryDetails,
 )
 
 

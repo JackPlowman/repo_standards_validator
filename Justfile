@@ -30,7 +30,6 @@ unit-test-debug: clean-repos
 validate-schema:
     poetry run check-jsonschema --schemafile tests/schema_validation/repositories_schema.json tests/schema_validation/repositories.json
 
-
 # ------------------------------------------------------------------------------
 # Cleaning Commands
 # ------------------------------------------------------------------------------
