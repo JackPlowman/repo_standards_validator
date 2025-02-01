@@ -1,7 +1,7 @@
 {
   "version": "0.18.1",
-  "uuid": "47fab80c-76e1-40db-b902-8e6b94fbed35",
-  "timestamp": "2025-01-26T21:18:14+00:00",
+  "uuid": "6c190568-dbc3-4500-9531-3b8df58e93b8",
+  "timestamp": "2025-02-01T16:26:59+00:00",
   "root": "/github/workspace",
   "repository": {
     "owner": "JackPlowman",
@@ -12,7 +12,7 @@
     "totals": {
       "Python": {
         "files": 10,
-        "lines_of_code": 169,
+        "lines_of_code": 175,
         "functions": 15,
         "hard_to_maintain": 0,
         "unmaintainable": 0
@@ -23,7 +23,7 @@
         "entries": [
           "validator/"
         ],
-        "profile": [88, 81, 0, 0]
+        "profile": [88, 87, 0, 0]
       },
       "validator/": {
         "entries": [
@@ -38,7 +38,7 @@
           "__init__.py",
           "custom_logging.py"
         ],
-        "profile": [88, 81, 0, 0]
+        "profile": [88, 87, 0, 0]
       }
     },
     "files": {
@@ -102,13 +102,13 @@
         ]
       },
       "validator/__main__.py": {
-        "checksum": "17f720f2847d92a3c2a0d77763a7e3c1",
+        "checksum": "4ae16a4d62fa131c07aedc44e00dfd2d",
         "language": "Python",
-        "loc": 29,
-        "profile": [7, 22, 0, 0],
+        "loc": 35,
+        "profile": [7, 28, 0, 0],
         "measurements": [
-          {"unit_name": "main", "start": {"line": 21, "column": 1}, "end": {"line": 42, "column": 15}, "value": 22},
-          {"unit_name": "clean_up", "start": {"line": 45, "column": 1}, "end": {"line": 51, "column": 31}, "value": 7}
+          {"unit_name": "main", "start": {"line": 21, "column": 1}, "end": {"line": 48, "column": 15}, "value": 28},
+          {"unit_name": "clean_up", "start": {"line": 51, "column": 1}, "end": {"line": 57, "column": 31}, "value": 7}
         ]
       },
       "validator/repositories.py": {
