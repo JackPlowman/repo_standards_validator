@@ -29,8 +29,8 @@ class RepositoryHasFiles:
 class RepositoryDetails:
     """A representation of a GitHub repository's details."""
 
-    pull_requests: int
-    issues: int
+    open_pull_requests: int
+    open_issues: int
 
 
 @dataclass

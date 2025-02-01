@@ -56,9 +56,15 @@ def check_repository_details(repository: GitHubRepositoryType) -> RepositoryDeta
     Returns:
         RepositoryDetails: The repository with the required details.
     """
-    pull_requests = repository.get_pulls().totalCount
-    issues = repository.get_issues().totalCount
-    return RepositoryDetails(pull_requests=pull_requests, issues=issues)
+    open_pull_requests = len(
+        [pull for pull in repository.get_pulls() if pull.state == "open"]
+    )
+    open_issues = len(
+        [issue for issue in repository.get_issues() if issue.state == "open"]
+    )
+    return RepositoryDetails(
+        open_pull_requests=open_pull_requests, open_issues=open_issues
+    )
 
 
 def check_repository_security_details(
