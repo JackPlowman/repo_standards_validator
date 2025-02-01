@@ -33,7 +33,7 @@ def main() -> None:
         logger.info(
             "Repository analysed",
             repository=analysed_repository.full_name,
-            percentage_complete=f"{int(index/total_repositories*100)}%"
+            percentage_complete=f"{int(index / total_repositories * 100)}%",
         )
     analysed_repositories = AnalysedRepositories(
         owner=configuration.repository_owner, repositories=raw_analysed_repositories
