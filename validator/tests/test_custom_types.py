@@ -1,7 +1,8 @@
 from validator.custom_types import (
     AnalysedRepositories,
     Repository,
-    RepositoryHasFiles,
+    RepositoryDetails,
+    RepositoryKeyFiles,
     RepositorySecurityDetails,
 )
 
@@ -12,6 +13,10 @@ def test_repository() -> None:
         name="test-repo",
         full_name="owner/test-repo",
         repository_link="https://github.com/JackPlowman/repo_standards_validator",
+        repository_details=RepositoryDetails(
+            open_pull_requests=5,
+            open_issues=6,
+        ),
         repository_security_details=RepositorySecurityDetails(
             secret_scanning_push_protection=True,
             secret_scanning=True,
@@ -19,7 +24,7 @@ def test_repository() -> None:
             private_vulnerability_disclosures=True,
             code_scanning_alerts=5,
         ),
-        repository_has_files=RepositoryHasFiles(
+        repository_key_files=RepositoryKeyFiles(
             has_security_policy=True,
             has_code_of_conduct=True,
             has_contributing=True,
@@ -35,6 +40,10 @@ def test_repository() -> None:
         repo.repository_link
         == "https://github.com/JackPlowman/repo_standards_validator"
     )
+    assert repo.repository_details == RepositoryDetails(
+        open_pull_requests=5,
+        open_issues=6,
+    )
     assert repo.repository_security_details == RepositorySecurityDetails(
         secret_scanning_push_protection=True,
         secret_scanning=True,
@@ -42,7 +51,7 @@ def test_repository() -> None:
         private_vulnerability_disclosures=True,
         code_scanning_alerts=5,
     )
-    assert repo.repository_has_files == RepositoryHasFiles(
+    assert repo.repository_key_files == RepositoryKeyFiles(
         has_security_policy=True,
         has_code_of_conduct=True,
         has_contributing=True,

@@ -2,7 +2,11 @@ from github import Repository as GitHubRepositoryType
 from structlog import get_logger, stdlib
 
 from .custom_types import Repository as AnalysedRepository
-from .custom_types import RepositoryHasFiles, RepositorySecurityDetails
+from .custom_types import (
+    RepositoryDetails,
+    RepositoryKeyFiles,
+    RepositorySecurityDetails,
+)
 from .file import find_file
 
 logger: stdlib.BoundLogger = get_logger()
@@ -18,26 +22,49 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
         AnalysedRepository: The repository with the required settings.
     """
     logger.info("Checking repository", repository=repository.full_name)
+    repository_details = check_repository_details(repository)
     repository_security_details = check_repository_security_details(repository)
-    repository_has_files = check_repository_has_key_files(repository)
+    repository_key_files = check_repository_has_key_files(repository)
     logger.debug(
         "Repository checked",
         repository=repository.full_name,
+        repository_details=repository_details,
         repository_security_details=repository_security_details,
-        repository_has_files=repository_has_files,
+        repository_key_files=repository_key_files,
     )
     return AnalysedRepository(
         name=repository.name,
         full_name=repository.full_name,
         repository_link=repository.html_url,
+        repository_details=repository_details,
         repository_security_details=repository_security_details,
-        repository_has_files=repository_has_files,
+        repository_key_files=repository_key_files,
     )
 
 
 def status_to_bool(status: str) -> bool:
     """Convert a status string to a boolean."""
     return status == "enabled"
+
+
+def check_repository_details(repository: GitHubRepositoryType) -> RepositoryDetails:
+    """Check the repository for the required details.
+
+    Args:
+        repository (GitHubRepositoryType): The repository to check.
+
+    Returns:
+        RepositoryDetails: The repository with the required details.
+    """
+    open_pull_requests = len(
+        [pull for pull in repository.get_pulls() if pull.state == "open"]
+    )
+    open_issues = len(
+        [issue for issue in repository.get_issues() if issue.state == "open"]
+    )
+    return RepositoryDetails(
+        open_pull_requests=open_pull_requests, open_issues=open_issues
+    )
 
 
 def check_repository_security_details(
@@ -71,14 +98,14 @@ def check_repository_security_details(
 
 def check_repository_has_key_files(
     repository: GitHubRepositoryType,
-) -> RepositoryHasFiles:
+) -> RepositoryKeyFiles:
     """Check if the repository has the required key files.
 
     Args:
         repository (GitHubRepositoryType): The repository to check.
 
     Returns:
-        RepositoryHasFiles: The repository with the required files.
+        RepositoryKeyFiles: The repository with the required files.
     """
     repository_directory = f"validator/cloned_repositories/{repository.name}"
     has_security_policy = find_file(repository_directory, "SECURITY.md")
@@ -89,7 +116,7 @@ def check_repository_has_key_files(
         repository_directory, "PROJECT_TECHNOLOGIES.md"
     )
     has_license = find_file(repository_directory, "LICENSE")
-    return RepositoryHasFiles(
+    return RepositoryKeyFiles(
         has_security_policy=has_security_policy,
         has_code_of_conduct=has_code_of_conduct,
         has_contributing=has_contributing,

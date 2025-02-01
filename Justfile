@@ -19,16 +19,45 @@ pyproject-check:
 # ------------------------------------------------------------------------------
 
 # Run unit tests
-unit-test:
+unit-test: clean-repos
     poetry run pytest validator --cov=. --cov-report=xml
 
 # Run unit tests with debug output
-unit-test-debug:
+unit-test-debug: clean-repos
     poetry run pytest validator --cov=. --cov-report=xml -vvvv
 
 # Validate the schema of the generated statistics file
 validate-schema:
     poetry run check-jsonschema --schemafile tests/schema_validation/repositories_schema.json tests/schema_validation/repositories.json
+
+# ------------------------------------------------------------------------------
+# Cleaning Commands
+# ------------------------------------------------------------------------------
+
+# Remove all cloned repositories and generated files
+clean:
+    just clean-repos
+    just clean-generated-files
+    find . \( \
+      -name '__pycache__' -o \
+      -name '.coverage' -o \
+      -name '.mypy_cache' -o \
+      -name '.pytest_cache' -o \
+      -name '.ruff_cache' -o \
+      -name '*.pyc' -o \
+      -name '*.pyd' -o \
+      -name '*.pyo' -o \
+      -name 'coverage.xml' -o \
+      -name 'db.sqlite3' \
+    \) -print | xargs rm -rfv
+
+# Remove all cloned repositories
+clean-repos:
+    rm -rf validator/cloned_repositories/** || true
+
+# Remove all generated files from running analyser
+clean-generated-files:
+    rm repositories.json || true
 
 # ------------------------------------------------------------------------------
 # Docker Commands
