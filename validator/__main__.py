@@ -28,7 +28,7 @@ def main() -> None:
     total_repositories = repositories.totalCount
     for index, repository in enumerate(repositories, 1):
         clone_repository(repository.name, repository.clone_url)
-        analysed_repository = check_repository(repository)
+        analysed_repository = check_repository(configuration, repository)
         raw_analysed_repositories.append(asdict(analysed_repository))
         logger.info(
             "Repository analysed",

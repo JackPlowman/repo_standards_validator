@@ -1,6 +1,8 @@
 from github import Repository as GitHubRepositoryType
+from requests import RequestException, get
 from structlog import get_logger, stdlib
 
+from .configuration import Configuration
 from .custom_types import Repository as AnalysedRepository
 from .custom_types import (
     RepositoryDetails,
@@ -12,10 +14,13 @@ from .file import find_file
 logger: stdlib.BoundLogger = get_logger()
 
 
-def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
+def check_repository(
+    configuration: Configuration, repository: GitHubRepositoryType
+) -> AnalysedRepository:
     """Check the repository for the required settings.
 
     Args:
+        configuration (Configuration): The configuration to use.
         repository (GitHubRepositoryType): The repository to check.
 
     Returns:
@@ -23,7 +28,9 @@ def check_repository(repository: GitHubRepositoryType) -> AnalysedRepository:
     """
     logger.info("Checking repository", repository=repository.full_name)
     repository_details = check_repository_details(repository)
-    repository_security_details = check_repository_security_details(repository)
+    repository_security_details = check_repository_security_details(
+        configuration, repository
+    )
     repository_key_files = check_repository_has_key_files(repository)
     logger.debug(
         "Repository checked",
@@ -68,11 +75,13 @@ def check_repository_details(repository: GitHubRepositoryType) -> RepositoryDeta
 
 
 def check_repository_security_details(
+    configuration: Configuration,
     repository: GitHubRepositoryType,
 ) -> RepositorySecurityDetails:
     """Check the repository for the required security details.
 
     Args:
+        configuration (Configuration): The configuration to use.
         repository (GitHubRepositoryType): The repository to check.
 
     Returns:
@@ -85,7 +94,9 @@ def check_repository_security_details(
     dependabot_security_updates = (
         repository.security_and_analysis.dependabot_security_updates.status
     )
-    private_vulnerability_disclosures = repository.get_vulnerability_alert()
+    private_vulnerability_disclosures = get_private_vulnerability_disclosures(
+        configuration, repository
+    )
     code_scanning_alerts = get_code_scanning_alerts(repository)
     return RepositorySecurityDetails(
         secret_scanning_push_protection=status_to_bool(secret_scanning_push_protection),
@@ -147,3 +158,36 @@ def get_code_scanning_alerts(repository: GitHubRepositoryType) -> int:
             "Could not fetch code scanning alerts", repository=repository.full_name
         )
         return 0
+
+
+def get_private_vulnerability_disclosures(
+    configuration: Configuration, repository: GitHubRepositoryType
+) -> bool:
+    """Get the private vulnerability disclosures for a repository.
+
+    Args:
+        configuration (Configuration): The configuration to use.
+        repository (GitHubRepositoryType): The repository to get the private
+        vulnerability disclosures for.
+
+    Returns:
+        bool: The private vulnerability disclosures.
+    """
+    try:
+        response = get(
+            f"https://api.github.com/repos/{repository.full_name}/private-vulnerability-reporting",
+            headers={
+                "Accept": "application/vnd.github+json",
+                "Authorization": f"Bearer {configuration.github_token}",
+                "X-GitHub-Api-Version": "2022-11-28",
+            },
+            timeout=5,
+        )
+        response.raise_for_status()
+        return response.json()["enabled"]
+    except RequestException:
+        logger.exception(
+            "Could not fetch private vulnerability disclosures",
+            repository=repository.full_name,
+        )
+        return False
