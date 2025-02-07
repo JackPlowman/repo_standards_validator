@@ -11,6 +11,7 @@ from validator.repository_checks import (
 
 def test_check_repository() -> None:
     # Arrange
+    configuration = MagicMock()
     repository = MagicMock()
     repository.name = "test-repo"
     repository.full_name = "owner/test-repo"
@@ -18,7 +19,7 @@ def test_check_repository() -> None:
     repository.security_and_analysis.secret_scanning.status = "enabled"
     repository.security_and_analysis.dependabot_security_updates.status = "enabled"
     # Act
-    analysed_repository = check_repository(repository)
+    analysed_repository = check_repository(configuration, repository)
     # Assert
     assert analysed_repository.name == "test-repo"
     assert analysed_repository.full_name == "owner/test-repo"
