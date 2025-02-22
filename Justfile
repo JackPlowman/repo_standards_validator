@@ -4,15 +4,11 @@
 
 # Install all python dependencies (including dev dependencies)
 install:
-    poetry install -E dev
+    uv sync --extra dev
 
 # Run the validator
 run:
-    poetry run python -m validator
-
-# Validates Pyproject
-pyproject-check:
-    poetry check
+    uv run python -m validator
 
 # ------------------------------------------------------------------------------
 # Test Commands
@@ -20,15 +16,15 @@ pyproject-check:
 
 # Run unit tests
 unit-test: clean-repos
-    poetry run pytest validator --cov=. --cov-report=xml
+    uv run pytest validator --cov=. --cov-report=xml
 
 # Run unit tests with debug output
 unit-test-debug: clean-repos
-    poetry run pytest validator --cov=. --cov-report=xml -vvvv
+    uv run pytest validator --cov=. --cov-report=xml -vvvv
 
 # Validate the schema of the generated statistics file
 validate-schema:
-    poetry run check-jsonschema --schemafile tests/schema_validation/repositories_schema.json tests/schema_validation/repositories.json
+    uv run check-jsonschema --schemafile tests/schema_validation/repositories_schema.json tests/schema_validation/repositories.json
 
 # ------------------------------------------------------------------------------
 # Cleaning Commands
@@ -87,19 +83,19 @@ ruff-fix:
 
 # Check for Ruff issues
 ruff-lint-check:
-    poetry run ruff check .
+    uv run ruff check .
 
 # Fix Ruff lint issues
 ruff-lint-fix:
-    poetry run ruff check . --fix
+    uv run ruff check . --fix
 
 # Check for Ruff format issues
 ruff-format-check:
-    poetry run ruff format --check .
+    uv run ruff format --check .
 
 # Fix Ruff format issues
 ruff-format-fix:
-    poetry run ruff format .
+    uv run ruff format .
 
 # ------------------------------------------------------------------------------
 # Other Python Tools
@@ -107,7 +103,7 @@ ruff-format-fix:
 
 # Check for unused code
 vulture:
-    poetry run vulture validator
+    uv run vulture validator
 
 # ------------------------------------------------------------------------------
 # Prettier - File Formatting
