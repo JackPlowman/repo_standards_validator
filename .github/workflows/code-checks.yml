@@ -26,7 +26,7 @@ jobs:
           persist-credentials: false
       # Lint and Format everything but Python
       - name: Lint Code Base
-        uses: super-linter/super-linter/slim@v7.2.1
+        uses: super-linter/super-linter/slim@v7.3.0
         env:
           VALIDATE_ALL_CODEBASE: true
           DEFAULT_BRANCH: main
@@ -197,7 +197,7 @@ jobs:
           create-md: true
           create-md-artifact: true
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4.6.0
+        uses: actions/upload-artifact@v4.6.1
         with:
           name: repositories
           path: repositories.json
@@ -215,7 +215,7 @@ jobs:
       - name: Setup Dependencies
         uses: ./.github/actions/setup-dependencies
       - name: Download Artifact
-        uses: actions/download-artifact@v4.1.8
+        uses: actions/download-artifact@v4.1.9
         with:
           name: repositories
           path: tests/schema_validation
