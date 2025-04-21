@@ -3,7 +3,7 @@ name = "repo_standards_validator"
 dynamic = ["version"]
 requires-python = ">=3.13"
 dependencies = [
-  "structlog==24.4.0",
+  "structlog==25.2.0",
   "pygithub==2.6.0",
   "GitPython==3.1.44",
   "requests==2.32.3",
@@ -12,16 +12,19 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
   "pytest==8.3.4",
-  "pytest-cov==6.0.0",
-  "ruff==0.9.7",
+  "pytest-cov==6.1.0",
+  "ruff==0.11.6",
   "vulture==2.14",
-  "zizmor==1.3.1",
+  "zizmor==1.6.0",
   "check-jsonschema==0.31.0",
 ]
 
 [tool.uv]
-required-version = "0.6.2"
+required-version = "0.6.14"
 package = false
+
+[tool.setuptools]
+py-modules = ["validator", "tests"]
 
 [tool.ruff]
 target-version = "py313"
