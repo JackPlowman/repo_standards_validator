@@ -4,11 +4,8 @@ description: "Installs dependencies for the project"
 runs:
   using: "composite"
   steps:
-    - name: Install Python and UV
-      uses: astral-sh/setup-uv@1edb52594c857e2b5b13128931090f0640537287 # v5.3.0
-      with:
-        pyproject-file: "pyproject.toml"
-        enable-cache: true
+    - name: Install the latest version of uv
+      uses: astral-sh/setup-uv@6b9c6063abd6010835644d4c2e1bef4cf5cd0fca # v6.0.1
     - name: Set up Just
       uses: extractions/setup-just@dd310ad5a97d8e7b41793f8ef055398d51ad4de6 # v2.0.0
     - name: Install Python Dependencies
