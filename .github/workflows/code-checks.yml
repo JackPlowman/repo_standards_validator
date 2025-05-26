@@ -130,6 +130,8 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           REPOSITORY_OWNER: ${{ github.REPOSITORY_OWNER }}
+      - name: Test Output
+        run: tests/test_output.sh
       - name: Download GitHub Action Summary
         uses: austenstone/job-summary@67b7e1f68ee55e44d073ab7354e7b580cd09567c # v2.0
         with:
