@@ -2,7 +2,7 @@
 set -e +x
 
 # check file exists
-test -f repository_statistics.json
+test -f repositories.json
 
 # check file is not empty
-test -s repository_statistics.json
+test -s repositories.json
