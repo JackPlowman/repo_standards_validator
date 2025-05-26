@@ -66,6 +66,7 @@ jobs:
       - name: Run repo_standards_validator (pre-built image)
         uses: ./
         with:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           REPOSITORY_OWNER: ${{ github.REPOSITORY_OWNER }}
       - name: Test Output
         run: tests/test_output.sh
