@@ -88,7 +88,7 @@ def check_repository_security_details(
         RepositorySecurityDetails: The repository with the required security details.
     """
     secret_scanning_push_protection = (
-        repository.security_and_analysis.secret_scanning_push_protection.status
+        repository.security_and_analysis.secret_scanning_push_protection.status or False
     )
     secret_scanning = repository.security_and_analysis.secret_scanning.status
     dependabot_security_updates = (
