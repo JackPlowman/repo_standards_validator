@@ -5,7 +5,7 @@ from typing import Self
 
 @dataclass
 class Configuration:
-    """Configuration for the analyser."""
+    """Configuration for the validator."""
 
     repository_owner: str
     github_token: str
