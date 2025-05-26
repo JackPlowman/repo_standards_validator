@@ -26,9 +26,7 @@ def main() -> None:
     repositories = retrieve_repositories(configuration)
     raw_analysed_repositories = []
     total_repositories = repositories.totalCount
-    repositories = sorted(
-        repositories, key=lambda repo: repo.full_name.lower()
-    )
+    repositories = sorted(repositories, key=lambda repo: repo.full_name.lower())
     for index, repository in enumerate(repositories, 1):
         clone_repository(repository.name, repository.clone_url)
         analysed_repository = check_repository(configuration, repository)
