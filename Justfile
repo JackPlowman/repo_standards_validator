@@ -51,7 +51,7 @@ clean:
 clean-repos:
     rm -rf validator/cloned_repositories/** || true
 
-# Remove all generated files from running analyser
+# Remove all generated files from running validator
 clean-generated-files:
     rm repositories.json || true
 

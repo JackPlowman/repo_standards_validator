@@ -63,7 +63,7 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Run GitHub Stats Analyser (pre-built image)
+      - name: Run repo_standards_validator (pre-built image)
         uses: ./
         with:
           REPOSITORY_OWNER: ${{ github.REPOSITORY_OWNER }}
