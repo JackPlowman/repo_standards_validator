@@ -73,13 +73,17 @@ docker-run:
 
 # ------------------------------------------------------------------------------
 # Ruff - Python Linting and Formatting
-# Set up ruff red-knot when it's ready
 # ------------------------------------------------------------------------------
 
 # Fix all Ruff issues
 ruff-fix:
     just ruff-format-fix
     just ruff-lint-fix
+
+# Check for all Ruff issues
+ruff-checks:
+    just ruff-format-check
+    just ruff-lint-check
 
 # Check for Ruff issues
 ruff-lint-check:
@@ -98,12 +102,23 @@ ruff-format-fix:
     uv run ruff format .
 
 # ------------------------------------------------------------------------------
+# Ty - Python Type Checking
+# ------------------------------------------------------------------------------
+
+# Check for type issues with Ty
+ty-check:
+    uv run ty check .
+
+# ------------------------------------------------------------------------------
 # Other Python Tools
 # ------------------------------------------------------------------------------
 
 # Check for unused code
 vulture:
     uv run vulture validator
+
+uv-lock-check:
+    uv lock --check
 
 # ------------------------------------------------------------------------------
 # Prettier
