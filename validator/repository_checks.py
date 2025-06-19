@@ -1,4 +1,4 @@
-from github import Repository as GitHubRepositoryType
+from github.Repository import Repository as GitHubRepositoryType
 from requests import RequestException, get
 from structlog import get_logger, stdlib
 
