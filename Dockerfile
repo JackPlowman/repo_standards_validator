@@ -5,14 +5,14 @@ FROM python:3.13-alpine AS builder
 WORKDIR /
 
 COPY pyproject.toml uv.lock ./
-RUN pip install --no-cache-dir uv==0.7.13 && \
+RUN pip install --no-cache-dir uv==0.7.20 && \
   uv export --format=requirements-txt > requirements.txt
 
 FROM python:3.13-alpine AS validator
 
 WORKDIR /
 
-RUN  apk add --no-cache git=2.49.0-r0
+RUN  apk add --no-cache git=2.49.1-r0
 
 COPY --chmod=755 run.sh run.sh
 COPY validator validator
