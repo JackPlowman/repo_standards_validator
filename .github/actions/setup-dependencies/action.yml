@@ -6,9 +6,6 @@ runs:
   steps:
     - name: Install Python and UV
       uses: astral-sh/setup-uv@bd01e18f51369d5a26f1651c3cb451d3417e3bba # v6.3.1
-      with:
-        pyproject-file: "pyproject.toml"
-        enable-cache: true
     - name: Set up Just
       uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
     - name: Install Python Dependencies
