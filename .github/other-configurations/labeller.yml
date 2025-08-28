@@ -10,7 +10,7 @@ markdown:
               [
                 "docs/*.md",
                 "*.md",
-                "LICENSE",
+                "LICENCE",
                 ".github/pull_request_template.md",
               ]
 dependencies:
