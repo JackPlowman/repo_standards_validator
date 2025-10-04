@@ -42,7 +42,6 @@ jobs:
     name: Run Python Lint Checks
     runs-on: ubuntu-latest
     permissions:
-      statuses: write
       security-events: write # Allow the workflow to upload analysis results
     steps:
       - name: Checkout Repository
