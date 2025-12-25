@@ -24,9 +24,7 @@ def main() -> None:
     clean_up()
     configuration = Configuration()
     repositories_iterable = retrieve_repositories(configuration)
-    repositories = sorted(
-        list(repositories_iterable), key=lambda repo: repo.full_name.lower()
-    )
+    repositories = sorted(repositories_iterable, key=lambda repo: repo.full_name.lower())
     raw_analysed_repositories = []
     total_repositories = len(repositories)
     for index, repository in enumerate(repositories, 1):
