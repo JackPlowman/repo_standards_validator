@@ -12,7 +12,7 @@ FROM python:3.13-alpine AS validator
 
 WORKDIR /
 
-RUN  apk add --no-cache git=2.50.0-r0
+RUN  apk add --no-cache git=2.52.0-r0
 
 COPY --chmod=755 run.sh run.sh
 COPY validator validator
