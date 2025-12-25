@@ -5,7 +5,7 @@ FROM python:3.13-alpine AS builder
 WORKDIR /
 
 COPY pyproject.toml uv.lock ./
-RUN pip install --no-cache-dir uv==0.8.22 && \
+RUN pip install --no-cache-dir uv==0.9.0 && \
   uv export --format=requirements-txt > requirements.txt
 
 FROM python:3.13-alpine AS validator
