@@ -1,9 +1,10 @@
 from validator.action_summary import generate_action_summary
+from validator.custom_types import AnalysedRepositories
 
 
 def test_generate_action_summary() -> None:
     # Arrange
-    analysed_repositories = {
+    analysed_repositories: AnalysedRepositories = {
         "owner": "test",
         "repositories": [
             {

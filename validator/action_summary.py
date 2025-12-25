@@ -4,14 +4,16 @@ from pathlib import Path
 
 from structlog import get_logger, stdlib
 
+from .custom_types import AnalysedRepositories
+
 logger: stdlib.BoundLogger = get_logger()
 
 
-def generate_action_summary(analysed_repositories: dict) -> None:
+def generate_action_summary(analysed_repositories: AnalysedRepositories) -> None:
     """Generate the action summary.
 
     Args:
-        analysed_repositories (dict): The analysed repositories.
+        analysed_repositories (AnalysedRepositories): The analysed repositories.
     """
     if "GITHUB_STEP_SUMMARY" in environ:
         logger.debug("Running in GitHub Actions, generating action summary")

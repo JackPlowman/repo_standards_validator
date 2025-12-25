@@ -1,8 +1,9 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from typing import TYPE_CHECKING
 
-from github import Github, PaginatedList
+from github import Github
 from structlog import get_logger, stdlib
 
 if TYPE_CHECKING:
@@ -13,11 +14,11 @@ if TYPE_CHECKING:
 logger: stdlib.BoundLogger = get_logger()
 
 
-def retrieve_repositories(configuration: Configuration) -> PaginatedList[Repository]:
+def retrieve_repositories(configuration: Configuration) -> Iterable[Repository]:
     """Retrieve the list of repositories to analyse.
 
     Returns:
-        PaginatedList[Repository]: The list of repositories.
+        Iterable[Repository]: The list of repositories.
     """
     github = Github(configuration.github_token)
     repositories = github.search_repositories(

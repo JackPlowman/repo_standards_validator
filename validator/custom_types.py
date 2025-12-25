@@ -49,4 +49,4 @@ class AnalysedRepositories(TypedDict):
     """A representation of a repository with the required settings."""
 
     owner: str
-    repositories: list[Repository]
+    repositories: list[dict[str, object]]
