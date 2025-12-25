@@ -1,5 +1,9 @@
+from typing import TYPE_CHECKING
+
 from validator.action_summary import generate_action_summary
-from validator.custom_types import AnalysedRepositories
+
+if TYPE_CHECKING:
+    from validator.custom_types import AnalysedRepositories
 
 
 def test_generate_action_summary() -> None:

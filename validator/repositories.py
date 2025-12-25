@@ -1,12 +1,13 @@
 from __future__ import annotations
 
-from collections.abc import Iterable
 from typing import TYPE_CHECKING
 
 from github import Github
 from structlog import get_logger, stdlib
 
 if TYPE_CHECKING:
+    from collections.abc import Iterable
+
     from github.Repository import Repository
 
     from .configuration import Configuration
