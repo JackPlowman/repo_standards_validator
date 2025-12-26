@@ -1,7 +1,7 @@
 [project]
 name = "repo_standards_validator"
 dynamic = ["version"]
-requires-python = "~=3.13.0"
+requires-python = "~=3.14.0"
 dependencies = [
   "structlog==25.5.0",
   "pygithub==2.8.1",
@@ -28,7 +28,7 @@ override-dependencies = ["urllib3==2.6.0"]
 py-modules = ["validator", "tests"]
 
 [tool.ruff]
-target-version = "py313"
+target-version = "py314"
 
 [tool.ruff.lint]
 select = ["ALL"]
