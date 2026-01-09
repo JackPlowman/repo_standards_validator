@@ -13,9 +13,9 @@ dependencies = [
 dev = [
   "pytest==9.0.2",
   "pytest-cov==7.0.0",
-  "ruff==0.14.10",
+  "ruff==0.14.11",
   "vulture==2.14",
-  "ty==0.0.7",
+  "ty==0.0.10",
   "check-jsonschema==0.36.0",
 ]
 
