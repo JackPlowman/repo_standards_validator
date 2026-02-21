@@ -13,10 +13,10 @@ dependencies = [
 dev = [
   "pytest==9.0.2",
   "pytest-cov==7.0.0",
-  "ruff==0.14.10",
+  "ruff==0.15.2",
   "vulture==2.14",
-  "ty==0.0.7",
-  "check-jsonschema==0.36.0",
+  "ty==0.0.18",
+  "check-jsonschema==0.36.2",
 ]
 
 [tool.uv]
