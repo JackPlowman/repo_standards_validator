@@ -1,6 +1,6 @@
 #checkov:skip=CKV_DOCKER_2
 #checkov:skip=CKV_DOCKER_3
-FROM python:3.13-alpine AS builder
+FROM python:3.14-alpine AS builder
 
 WORKDIR /
 
@@ -8,7 +8,7 @@ COPY pyproject.toml uv.lock ./
 RUN pip install --no-cache-dir uv==0.9.0 && \
   uv export --format=requirements-txt > requirements.txt
 
-FROM python:3.13-alpine AS validator
+FROM python:3.14-alpine AS validator
 
 WORKDIR /
 
