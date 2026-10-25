@@ -4,7 +4,7 @@ author: "Jack Plowman"
 
 runs:
   using: "docker"
-  image: "../../../Dockerfile"
+  image: "../../../Dockerfile" # zizmor: ignore[unpinned-images] builds the repository Dockerfile
   env:
     GITHUB_ACTION: "true"
 

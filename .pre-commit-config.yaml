@@ -6,22 +6,26 @@ repos:
       - id: ruff-check
         name: Ruff lint
         entry: uv run --frozen --extra dev ruff check
-        language: system
+        language: python
+        additional_dependencies: [uv==0.13.5]
         types: [python]
       - id: ruff-format
         name: Ruff format
         entry: uv run --frozen --extra dev ruff format --check
-        language: system
+        language: python
+        additional_dependencies: [uv==0.13.5]
         types: [python]
       - id: ty-check
         name: Python type checks
         entry: uv run --frozen --extra dev ty check .
-        language: system
+        language: python
+        additional_dependencies: [uv==0.13.5]
         types: [python]
         pass_filenames: false
       - id: uv-lock
         name: UV lockfile check
         entry: uv lock --check
-        language: system
+        language: python
+        additional_dependencies: [uv==0.13.5]
         files: ^(pyproject\.toml|uv\.lock)$
         pass_filenames: false
