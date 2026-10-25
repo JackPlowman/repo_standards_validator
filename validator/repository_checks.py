@@ -1,8 +1,7 @@
-from github.Repository import Repository as GitHubRepositoryType
 from requests import RequestException, get
 from structlog import get_logger, stdlib
+lazy from github.Repository import Repository as GitHubRepositoryType
 
-from .configuration import Configuration
 from .custom_types import Repository as AnalysedRepository
 from .custom_types import (
     RepositoryDetails,
@@ -10,6 +9,7 @@ from .custom_types import (
     RepositorySecurityDetails,
 )
 from .file import find_file
+lazy from .configuration import Configuration
 
 logger: stdlib.BoundLogger = get_logger()
 

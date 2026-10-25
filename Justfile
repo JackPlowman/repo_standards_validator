@@ -4,7 +4,7 @@
 
 # Install all python dependencies (including dev dependencies)
 install:
-    uv sync --extra dev
+    uv sync --frozen --extra dev
 
 # Run the validator
 run:
@@ -158,7 +158,7 @@ gitleaks-detect:
 
 # Run prek checking on all pre-commit config files
 prek-check:
-    find . -name "pre-commit-config.*" -exec prek validate-config -c {} \;
+    find . -name "pre-commit-config.*" -exec uvx prek==0.5.7 validate-config {} \;
 
 # ------------------------------------------------------------------------------
 # Zizmor
@@ -206,7 +206,7 @@ editorconfig-check:
 
 # Install git hooks using prek
 install-git-hooks:
-    prek install
+    uvx prek==0.5.7 install
 
 # ------------------------------------------------------------------------------
 # Prek
@@ -219,7 +219,7 @@ prek-update:
 
 # Prek update hooks
 prek-update-hooks:
-    prek update --freeze
+    uvx prek==0.5.7 auto-update --freeze
 
 prek-update-additional-dependencies:
     uv run --script https://raw.githubusercontent.com/JackPlowman/update-prek-additional-dependencies/refs/heads/main/update_prek_additional_dependencies.py

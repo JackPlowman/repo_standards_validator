@@ -15,7 +15,7 @@ def find_file(directory: str, filename: str) -> bool:
     """
     if search_for_file(directory, filename):
         return True
-    filename_without_extension = filename.split(".")[0]
+    filename_without_extension = filename.split(".", maxsplit=1)[0]
     files_to_check = [
         f"{filename_without_extension}{extension}"
         for extension in COMMON_FILE_EXTENSIONS

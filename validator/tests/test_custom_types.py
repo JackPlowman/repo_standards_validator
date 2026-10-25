@@ -63,7 +63,7 @@ def test_repository() -> None:
 
 def test_analysed_repositories() -> None:
     # Arrange
-    repos = [
+    repos: list[dict[str, object]] = [
         {
             "name": "test-repo",
             "full_name": "owner/test-repo",

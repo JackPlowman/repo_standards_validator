@@ -4,7 +4,7 @@ from pathlib import Path
 
 from structlog import get_logger, stdlib
 
-from .custom_types import AnalysedRepositories
+lazy from .custom_types import AnalysedRepositories
 
 logger: stdlib.BoundLogger = get_logger()
 
